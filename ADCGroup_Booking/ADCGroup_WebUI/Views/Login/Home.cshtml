@@ -1,0 +1,64 @@
+﻿@model ADCGroup_WebUI.Models.LoginModels.Accounts
+
+@{
+    Layout = null;
+    ViewBag.Title = "Home";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login/Logout animation concept</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+    <link rel="stylesheet" href="~/Asset/css/style.css">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="cont">
+        <div class="demo">
+            <div class="login">
+                <div class="login__check"></div>
+                <div class="login__form">
+                    @using (Html.BeginForm("Home", "Login", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="login__row">
+                            <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+                                <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+                            </svg>
+                            @Html.TextBoxFor(model => model.Username, new { placeholder = "Username", @class = "login__input name" })
+                            @*<input type="email" class="login__input name" placeholder="Username" name="username" />*@
+                        </div>
+                        <div class="login__row">
+                            <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
+                                <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
+                            </svg>
+                            @Html.TextBoxFor(model => model.Password, new { placeholder = "Password", type = "password", @class = "login__input name" })
+                            @*<input type="password" class="login__input pass" placeholder="Password" name="password" />*@
+                        </div>
+                        <br />
+                        @Html.ValidationMessage("Notification", "", new { @class = "text-danger" })
+                        <input type="submit" value="Đăng nhập" class="login__submit" />
+                        @*<button type="button" class="login__submit">Sign in</button>*@
+                    }
+                    <p class="login__signup">
+                        Design by Ngọc Phương
+                        <a href="https://www.facebook.com/NNPhuongou2014">
+                            <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
+                                <path d="M11.344,5.71c0-0.73,0.074-1.122,1.199-1.122h1.502V1.871h-2.404c-2.886,0-3.903,1.36-3.903,3.646v1.765h-1.8V10h1.8v8.128h3.601V10h2.403l0.32-2.718h-2.724L11.344,5.71z" />
+                            </svg>
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="~/Asset/js/index.js"></script>
+</body>
+</html>
