@@ -117,8 +117,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Asset\css\style.css" />
-    <Content Include="Asset\images\19030563_1303881466400150_6663632055085219398_n.jpg" />
+    <Content Include="Asset\css\styleAboutMe.css" />
+    <Content Include="Asset\css\styleLogin.css" />
+    <Content Include="Asset\images\photoaboutme.jpg" />
+    <Content Include="Asset\images\vietnamlogo.png" />
     <Content Include="Asset\js\index.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -137,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutMeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -158,6 +161,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\AboutMe\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

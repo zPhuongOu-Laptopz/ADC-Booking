@@ -1,4 +1,4 @@
-*, *:before, *:after {
+﻿*, *:before, *:after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -39,7 +39,7 @@ input, button {
 .cont {
   position: relative;
   height: 100%;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-1.jpg");
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg");
   background-size: cover;
   overflow: auto;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -484,6 +484,11 @@ input, button {
   -webkit-animation: animRipple 0.4s;
           animation: animRipple 0.4s;
   border-radius: 50%;
+}
+
+.validation-text-danger{
+    font-size: 15px;
+    color: #b94a48;
 }
 
 @-webkit-keyframes animRipple {

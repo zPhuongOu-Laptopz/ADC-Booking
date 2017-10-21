@@ -17,18 +17,21 @@ namespace ADCGroup_WebUI.Controllers
         {
             if (account.Username == null)
             {
-                ModelState.AddModelError("Notification", "Bạn chưa nhập Username");
+                ModelState.AddModelError("Notification", "Bạn chưa nhập tài khoản");
             }
             else if (account.Password == null)
             {
-                ModelState.AddModelError("Notification", "Bạn chưa nhập Password");
+                ModelState.AddModelError("Notification", "Bạn chưa nhập mật khẩu");
             }
-            else
+            else if (account.Username == "admin" && account.Password == "admin")
             {
                 ModelState.AddModelError("Notification", "Đăng nhập thành công");
             }
+            else
+            {
+                ModelState.AddModelError("Notification", "Sai tài khoản hoặc mật khẩu");
+            }
             return View();
         }
-
     }
 }
