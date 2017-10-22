@@ -33,5 +33,10 @@ namespace ADCGroup_WebUI.Controllers
             }
             return View();
         }
+
+        public void TestLogin()
+        {
+
+        }
     }
 }

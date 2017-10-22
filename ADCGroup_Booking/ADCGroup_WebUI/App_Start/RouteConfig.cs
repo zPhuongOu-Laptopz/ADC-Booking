@@ -25,9 +25,20 @@ namespace ADCGroup_WebUI
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
+                name: "About",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "AboutMe", action = "AboutMe", id = UrlParameter.Optional }
+                defaults: new { controller = "AboutMe", action = "Index", id = UrlParameter.Optional }
+            );
+        }
+
+        public static void TestRoutes(RouteCollection routes)
+        {
+            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+            routes.MapRoute(
+                name: "Test",
+                url: "{action}/{id}",
+                defaults: new { controller = "About", action = "Index", id = UrlParameter.Optional }
             );
         }
 
@@ -35,6 +46,7 @@ namespace ADCGroup_WebUI
         {
             RegisterRoutes(RouteTable.Routes);
             AboutMeRoutes(RouteTable.Routes);
+            TestRoutes(RouteTable.Routes);
         }
     }
 }
