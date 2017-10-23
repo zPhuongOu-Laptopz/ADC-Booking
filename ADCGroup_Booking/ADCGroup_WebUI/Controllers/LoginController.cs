@@ -1,6 +1,7 @@
 ﻿using ADCGroup_WebUI.Models.LoginModels;
 using ADCGroup_Service.Service_BookingRoom.Service_Login;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace ADCGroup_WebUI.Controllers
 {
@@ -19,6 +20,7 @@ namespace ADCGroup_WebUI.Controllers
             if (_code == 200)
             {
                 ModelState.AddModelError("Notification", "Đăng nhập thành công");
+                return RedirectToAction("Index", "Building", new { _username = account.Username });
             }
             else if (_code == 401)
             {
@@ -26,7 +28,7 @@ namespace ADCGroup_WebUI.Controllers
             }
             else if (_code == 403)
             {
-                ModelState.AddModelError("Notification", "Cấm quyền truy cập");
+                ModelState.AddModelError("Notification", "Không có quyền truy cập");
             }
             else if (_code == 409)
             {

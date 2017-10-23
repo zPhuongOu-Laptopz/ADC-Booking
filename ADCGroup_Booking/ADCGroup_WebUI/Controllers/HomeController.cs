@@ -6,19 +6,14 @@ using System.Web.Mvc;
 
 namespace ADCGroup_WebUI.Controllers
 {
-    public class AboutController : Controller
+    public class HomeController : Controller
     {
-        // GET: AboutMe
+        // GET: Home
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(string username)
         {
+            ViewBag.Name = username;
             return View();
         }
-
-        [HttpGet]
-        public ActionResult ADCGroup()
-        {
-            return View();
-        } 
     }
 }

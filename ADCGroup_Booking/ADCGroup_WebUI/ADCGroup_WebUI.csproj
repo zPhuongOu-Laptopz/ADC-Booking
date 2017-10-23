@@ -119,6 +119,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Asset\css\styleAboutMe.css" />
+    <Content Include="Asset\css\styleBuilding.css" />
+    <Content Include="Asset\css\styleHome.css" />
     <Content Include="Asset\css\styleLogin.css" />
     <Content Include="Asset\images\background_1.jpeg" />
     <Content Include="Asset\images\Logo2.png" />
@@ -143,6 +145,8 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\BuildingController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -166,6 +170,8 @@
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\About\ADCGroup.cshtml" />
+    <Content Include="Views\Building\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
