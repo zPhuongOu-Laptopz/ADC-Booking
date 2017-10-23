@@ -286,3 +286,6 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+ADCGroup_Booking/ADCGroup_WebUI.Tests/
+ADCGroup_Booking/ADCGroup_WebUI.Tests

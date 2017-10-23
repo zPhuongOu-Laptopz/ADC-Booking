@@ -1,4 +1,5 @@
 ﻿using ADCGroup_WebUI.Models.LoginModels;
+using ADCGroup_Service.Service_BookingRoom.Service_Login;
 using System.Web.Mvc;
 
 namespace ADCGroup_WebUI.Controllers
@@ -12,31 +13,30 @@ namespace ADCGroup_WebUI.Controllers
             return View();
         }
 
-        [HttpPost]
         public ActionResult Home(Accounts account)
         {
-            if (account.Username == null)
-            {
-                ModelState.AddModelError("Notification", "Bạn chưa nhập tài khoản");
-            }
-            else if (account.Password == null)
-            {
-                ModelState.AddModelError("Notification", "Bạn chưa nhập mật khẩu");
-            }
-            else if (account.Username == "admin" && account.Password == "admin")
+            int _code = new Service_Login(account.Username, account.Password) { }.LoginService();
+            if (_code == 200)
             {
                 ModelState.AddModelError("Notification", "Đăng nhập thành công");
             }
+            else if (_code == 401)
+            {
+                ModelState.AddModelError("Notification", "Sai tên đăng nhập hoặc mật khẩu");
+            }
+            else if (_code == 403)
+            {
+                ModelState.AddModelError("Notification", "Cấm quyền truy cập");
+            }
+            else if (_code == 409)
+            {
+                ModelState.AddModelError("Notification", "Tài khoản chưa xác minh");
+            }
             else
             {
-                ModelState.AddModelError("Notification", "Sai tài khoản hoặc mật khẩu");
+                ModelState.AddModelError("Notification", "Lỗi sai còn lại");
             }
             return View();
-        }
-
-        public void TestLogin()
-        {
-
         }
     }
 }
