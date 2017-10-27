@@ -1,0 +1,399 @@
+﻿
+@{
+    ViewBag.Title = "Book Room";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<div class="main__content">
+    @*<h2 style="margin:0px;">Meeting Room Reservation</h2>*@
+    <br />
+    <div class="np-button">
+        <div id="buttons">
+            @*<input type="button" id="btnpopup" value="Open Modal Popup" onclick="ShowModelPopUp();" />
+            <script type="text/javascript">
+               ShowModelPopUp = function () {
+                   window.showModalDialog('/Home/OpenModelPopup', "WindowPopup", 'width=400px,height=400px');
+               }
+            </script>*@
+            <a href="#" class="btn green">P.Lầu 2 Lớn</a>
+            <a href="#" class="btn green">P.Lầu 2 Nhỏ</a>
+            <a href="#" class="btn green">P.Lầu 4</a>
+            <a href="#" class="btn green">P.Lầu 6</a>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class='centered'>
+            @*<div class='info'>
+                <p>Try adding your own activity. Open the console and paste this command:</p>
+                <div class='code'>schedule.activities.add(4,"Physics", "8.00-10.30", 102, "A", "B.Konon","pink");</div>
+            </div>*@
+            <div id='schedule'>
+                <div class='s-legend'>
+                    <div class='s-cell s-head-info'>
+                        <div class='s-name'>Ngày/Giờ</div>
+                    </div>
+                    <div class='s-week-day s-cell'>
+                        <div class='s-day'>T4-25/10</div>
+                    </div>
+                    <div class='s-week-day s-cell'>
+                        <div class='s-day'>T5-26/10</div>
+                    </div>
+                    <div class='s-week-day s-cell'>
+                        <div class='s-day'>T6-27/10</div>
+                    </div>
+                    <div class='s-week-day s-cell'>
+                        <div class='s-day'>T7-28/10</div>
+                    </div>
+                    <div class='s-week-day s-cell'>
+                        <div class='s-day'>CN-29/10</div>
+                    </div>
+                </div>
+                <div class='s-container s-block'>
+                    <div class='s-head-info'>
+                        <div class='s-head-hour'>
+                            <div class='s-number'>0</div>
+                            <div class='s-hourly-interval'>8.00-9.00</div>
+                        </div>
+                        <div class='s-head-hour'>
+                            <div class='s-number'>1</div>
+                            <div class='s-hourly-interval'>9.00-10.00</div>
+                        </div>
+                        <div class='s-head-hour'>
+                            <div class='s-number'>2</div>
+                            <div class='s-hourly-interval'>10.00-11.00</div>
+                        </div>
+                        <div class='s-head-hour'>
+                            <div class='s-number'>3</div>
+                            <div class='s-hourly-interval'>11.00-12.00</div>
+                        </div>
+                        <div class='s-head-hour'>
+                            <div class='s-number'>4</div>
+                            <div class='s-hourly-interval'>12.00-13.00</div>
+                        </div>
+                        <div class='s-head-hour'>
+                            <div class='s-number'>5</div>
+                            <div class='s-hourly-interval'>13.00-14.00</div>
+                        </div>
+                        <div class='s-head-hour'>
+                            <div class='s-number'>6</div>
+                            <div class='s-hourly-interval'>14.00-15.00</div>
+                        </div>
+                        <div class='s-head-hour'>
+                            <div class='s-number'>7</div>
+                            <div class='s-hourly-interval'>15.00-16.00</div>
+                        </div>
+                        <div class='s-head-hour'>
+                            <div class='s-number'>8</div>
+                            <div class='s-hourly-interval'>16.00-17.00</div>
+                        </div>
+                        <!-- <div class='s-head-hour'>
+                      <div class='s-number'>9</div>
+                      <div class='s-hourly-interval'>Ghi Chú</div>
+                    </div> -->
+                    </div>
+                    <div class='s-rows-container'>
+                        <div class='s-activities'>
+                            <div class='s-act-row'>
+                                <div class='s-act-tab green' data-hours='8.15-9.00'>
+                                    <div class='s-act-name'>English</div>
+                                    <div class='s-wrapper'>
+                                        <div class='s-act-teacher'>A. Rygulska</div>
+                                        <div class='s-act-room'>105</div>
+                                        <div class='s-act-group'>G1</div>
+                                    </div>
+                                </div>
+                                <div class='s-act-tab orange' data-hours='9.45-12.50'>
+                                    <div class='s-act-name'>Math</div>
+                                    <a href="#">
+                                        <div class='s-wrapper'>
+                                            <div class='s-act-teacher'>D. Kozlowicz</div>
+                                            <div class='s-act-room'>121</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class='s-act-tab green' data-hours='13.45-14.30'>
+                                    <div class='s-act-name'>Math</div>
+                                    <div class='s-wrapper'>
+                                        <div class='s-act-teacher'>D. Kozlowicz</div>
+                                        <div class='s-act-room'>121</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='s-act-row'>
+                                <div class='s-act-tab blue' data-hours='8.50-10.08'>
+                                    <div class='s-act-name'>Exam</div>
+                                    <div class='s-wrapper'>
+                                        <div class='s-act-teacher'>A. Rygulska</div>
+                                        <div class='s-act-room'>105</div>
+                                        <div class='s-act-group'>G1</div>
+                                    </div>
+                                </div>
+                                <div class='s-act-tab black' data-hours='10.50-12.30'>
+                                    <div class='s-act-name'>Math</div>
+                                    <div class='s-wrapper'>
+                                        <div class='s-act-teacher'>D. Kozlowicz</div>
+                                        <div class='s-act-room'>121</div>
+                                    </div>
+                                </div>
+                                <div class='s-act-tab orange' data-hours='14.15-15.20'>
+                                    <div class='s-act-name'>Fitness</div>
+                                    <div class='s-wrapper'>
+                                        <div class='s-act-teacher'>D. Kozlowicz</div>
+                                        <div class='s-act-room'>121</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='s-act-row'></div>
+                            <div class='s-act-row'>
+                                <div class='s-act-tab blue' data-hours='7.10-7.55'>
+                                    <div class='s-act-name'>English</div>
+                                    <div class='s-wrapper'>
+                                        <div class='s-act-teacher'>A. Rygulska</div>
+                                        <div class='s-act-room'>105</div>
+                                        <div class='s-act-group'>G1</div>
+                                    </div>
+                                </div>
+                                <div class='s-act-tab red' data-hours='8.23-9.35'>
+                                    <div class='s-act-name'>Deutsch</div>
+                                    <div class='s-wrapper'>
+                                        <div class='s-act-teacher'>D. Kozlowicz</div>
+                                        <div class='s-act-room'>121</div>
+                                    </div>
+                                </div>
+                                <div class='s-act-tab pink' data-hours='15.05-16.10'>
+                                    <div class='s-act-name'>Bio</div>
+                                    <div class='s-wrapper'>
+                                        <div class='s-act-teacher'>D. Kozlowicz</div>
+                                        <div class='s-act-room'>121</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='s-act-row'></div>
+                        </div>
+                        <div class='s-row s-hour-row'>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                        </div>
+                        <div class='s-row s-hour-row'>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                        </div>
+                        <div class='s-row s-hour-row'>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                        </div>
+                        <div class='s-row s-hour-row'>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                        </div>
+                        <div class='s-row s-hour-row'>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                        </div>
+                        <div class='s-row s-hour-row'>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                        </div>
+                        <div class='s-row s-hour-row'>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                        </div>
+                        <div class='s-row s-hour-row'>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                        </div>
+                        <div class='s-row s-hour-row'>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                            <div class='s-hour-wrapper s-cell'>
+                                <div class='s-half-hour'></div>
+                                <div class='s-half-hour'></div>
+                            </div>
+                        </div>
+                        <!-- <div class='s-row s-hour-row'>
+                      <div class='s-hour-wrapper s-cell'>
+                        <div class='s-half-hour'></div>
+                        <div class='s-half-hour'></div>
+                      </div>
+                      <div class='s-hour-wrapper s-cell'>
+                        <div class='s-half-hour'></div>
+                        <div class='s-half-hour'></div>
+                      </div>
+                      <div class='s-hour-wrapper s-cell'>
+                        <div class='s-half-hour'></div>
+                        <div class='s-half-hour'></div>
+                      </div>
+                      <div class='s-hour-wrapper s-cell'>
+                        <div class='s-half-hour'></div>
+                        <div class='s-half-hour'></div>
+                      </div>
+                      <div class='s-hour-wrapper s-cell'>
+                        <div class='s-half-hour'></div>
+                        <div class='s-half-hour'></div>
+                      </div>
+                    </div>         -->
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>    
+</div>

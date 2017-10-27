@@ -120,13 +120,16 @@
   <ItemGroup>
     <Content Include="Asset\css\styleAboutMe.css" />
     <Content Include="Asset\css\styleBuilding.css" />
+    <Content Include="Asset\css\styleCalendar.css" />
     <Content Include="Asset\css\styleHome.css" />
     <Content Include="Asset\css\styleLogin.css" />
+    <Content Include="Asset\css\styleMeetingRoom.css" />
     <Content Include="Asset\images\background_1.jpeg" />
     <Content Include="Asset\images\Logo2.png" />
     <Content Include="Asset\images\logoadc.jpg" />
     <Content Include="Asset\images\photoaboutme.jpg" />
     <Content Include="Asset\js\index.js" />
+    <Content Include="Asset\js\jsCalendar.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -172,6 +175,8 @@
     <Content Include="Views\About\ADCGroup.cshtml" />
     <Content Include="Views\Building\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_HomeLayout.cshtml" />
+    <Content Include="Views\Home\MeetingRoom.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,5 +1,9 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Lato:700,400,300italic,300,100);
- @import url(https://necolas.github.io/normalize.css/4.1.1/normalize.css); 
+@import url(https://necolas.github.io/normalize.css/4.1.1/normalize.css); 
+a:hover{
+    text-decoration:none;
+}
+
 .c-aside-nav {
   z-index: 1000;
   background-image: url(https://dl.dropboxusercontent.com/u/29650667/Front%20End/Olios-flexbox/LOGO.png);
@@ -42,6 +46,7 @@ p{
 }
 
 .c-aside-nav .fa-sign-in {
+  margin-left: 15%;
   position: absolute;
   bottom: 4vh;
   display: block;

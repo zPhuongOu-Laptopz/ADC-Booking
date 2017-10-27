@@ -13,12 +13,15 @@
 <body>
     <html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8">        
         <title>OLIOS</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="../css/normalize.css">
-        <link rel="stylesheet" href="../_build/css/main.css">
-        <link href="~/Asset/css/styleHome.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../_build/css/main.css">  
+        <link href="~/Asset/css/styleCalendar.css" rel="stylesheet" />  
+        <link href="~/Asset/css/styleHome.css" rel="stylesheet" /> 
+        <link href="~/Asset/css/styleMeetingRoom.css" rel="stylesheet" /> 
     </head>
 
     <body>
@@ -57,27 +60,12 @@
                 </a>
             </div>
         </section>
-        <!--===== END OF RIGHT SLIDER MENU =====-->
         <section class="main">
-            <div class="main__content">
-                <h1>ADC - IT</h1>
-                <p>Hi, @Html.ViewBag.Name</p>
-                <a href="/Home/MeetingRoom" class="btn btn-main">Meeting Room Reservation</a>
-            </div>
-            @*<form class='bg-tabs' action="get">
-                <input type="radio" name="bg-tabs__tab" id="bg-tabs__tab-1" checked>
-                <label for="bg-tabs__tab-1" class="bg-tabs__tab-1"></label>
-                 <input type="radio" name="bg-tabs__tab" id="bg-tabs__tab-2">
-                <label for="bg-tabs__tab-2" class="bg-tabs__tab-2"></label>
-                <input type="radio" name="bg-tabs__tab" id="bg-tabs__tab-3">
-                <label for="bg-tabs__tab-3" class="bg-tabs__tab-3"></label>
-                <input type="radio" name="bg-tabs__tab" id="bg-tabs__tab-4">
-                <label for="bg-tabs__tab-4" class="bg-tabs__tab-4"></label> 
-                <input class="bg-tabs__submit" type="submit" value="">
-            </form>*@
+            @RenderBody()
         </section>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <script src="~/Asset/js/jsCalendar.js"></script>
     </body>
 </html>
 </body>
 </html>
-
