@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout_FullWidth</title>
+    <link href="~/Asset/css/styleBasicLayout.css" rel="stylesheet" />
+    <link href="~/Asset/css/styleNpLayout.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="c-menu-slider">
+        <input type="checkbox" name="c-menu-btn" id="c-menu-btn">
+        <label for="c-menu-btn" class="c-menu-btn">
+            <div class="c-menu-btn__indicator">
+                <div class="c-menu-btn__indicator--1"></div>
+                <div class="c-menu-btn__indicator--2"></div>
+                <div class="c-menu-btn__indicator--3"></div>
+            </div>
+        </label>
+        <label for="c-menu-btn" class="c-menu-btn--is-active"></label>
+        <div class="c-menu-slider__content">
+            <ul class="c-menu-items">
+                <li class='item-1'><a href="living-room.html">TRANG CHỦ</a></li>
+                <li class='item-2'><a href="">PHÒNG HỌP</a></li>
+                <li class='item-3'><a href="">Building...</a></li>
+                <li class='item-4'><a href="">Building...</a></li>
+                <li class='item-5'><a href="">Building...</a></li>
+            </ul>
+            <a href="" class="c-menu-btn-bottom">
+                Đăng Xuất
+                <hr class="c-menu-btn-bottom-underline">
+            </a>
+        </div>
+    </section>
+    <!--===== END OF RIGHT SLIDER MENU =====-->
+    <section class="main">
+        @RenderBody()
+    </section>
+</body>
+</html>

@@ -9,11 +9,10 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>ADC Login</title>
+    <title>ADC Booking</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans'>
     <link href="~/Asset/css/styleLogin.css" rel="stylesheet" />
-
 </head>
 <body>
     <div class="cont">
@@ -22,7 +21,7 @@
                 @*<div class="login__check"></div>*@
                 <div class="image-logo">
                     <a href="~/About/ADCGroup">
-                        <img src="~/Asset/images/Logo2.png" />
+                        <img src="~/Asset/images/Logo2.png" style="width:100%;"/>
                     </a>
                 </div>
                 <div class="login__form">
@@ -33,20 +32,20 @@
                             <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
                                 <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
                             </svg>
-                            @Html.TextBoxFor(model => model.Username, new { placeholder = "Username", @class = "login__input name" })
+                            @Html.TextBoxFor(model => model.Username, new { placeholder = "Tài khoản", @class = "login__input name" })
                         </div>
                         <div class="login__row">
                             <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
                                 <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
                             </svg>
-                            @Html.TextBoxFor(model => model.Password, new { placeholder = "Password", type = "password", @class = "login__input name" })
+                            @Html.TextBoxFor(model => model.Password, new { placeholder = "Mật khẩu", type = "password", @class = "login__input name" })
                         </div>
                         <br />
                         @Html.ValidationMessage("Notification", "", new { @class = "validation-text-danger" })
                         <input type="submit" value="Đăng nhập" class="login__submit" />
                     }
                     <p class="login__signup">
-                        <a href="#">Quên mật khẩu?</a><br />
+                        <a href="http://intern.adcvn.com:8100/secure/ForgotLoginDetails.jspa">Quên mật khẩu?</a><br />
                         &copy; Design by Ngọc Phương
                         <a href="~/About/Index" style="margin-left:5px;">
                             <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">

@@ -36,7 +36,7 @@ namespace ADCGroup_WebUI.Controllers
             }
             else
             {
-                ModelState.AddModelError("Notification", "Lỗi sai còn lại");
+                ModelState.AddModelError("Notification", "Lỗi đăng nhập");
             }
             return View();
         }

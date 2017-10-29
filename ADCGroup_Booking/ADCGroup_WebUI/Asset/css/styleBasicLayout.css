@@ -1,12 +1,8 @@
-﻿@import url(https://fonts.googleapis.com/css?family=Lato:700,400,300italic,300,100);
-@import url(https://necolas.github.io/normalize.css/4.1.1/normalize.css); 
-a:hover{
-    text-decoration:none;
-}
-
+﻿/* @import url(https://fonts.googleapis.com/css?family=Lato:700,400,300italic,300,100); */
+/* @import url(https://necolas.github.io/normalize.css/4.1.1/normalize.css);    */
 .c-aside-nav {
   z-index: 1000;
-  background-image: url(https://dl.dropboxusercontent.com/u/29650667/Front%20End/Olios-flexbox/LOGO.png);
+  /* background-image: url(https://dl.dropboxusercontent.com/u/29650667/Front%20End/Olios-flexbox/LOGO.png); */
   background-size: 33%;
   background-position: center 3vh;
   background-repeat: no-repeat;
@@ -26,10 +22,6 @@ a:hover{
   transition: color 0.15s 0s ease-in-out, text-shadow 0.15s 0s ease-in-out
 }
 
-p{
-    font-family:Arial;
-}
-
 .c-aside-nav .fa:hover {
   /* color: rgba(0, 35, 255, 0.76); */
   color: #00a84f;
@@ -46,7 +38,6 @@ p{
 }
 
 .c-aside-nav .fa-sign-in {
-  margin-left: 15%;
   position: absolute;
   bottom: 4vh;
   display: block;
@@ -396,7 +387,7 @@ input[id='c-menu-btn']:not(:checked) ~ .c-menu-slider__content {
   content: "";
   width: 5.5vh;
   height: 5.5vh;
-  background-image: url(https://dl.dropboxusercontent.com/u/29650667/Front%20End/Olios-flexbox/ICON1.png);
+  /* background-image: url(https://dl.dropboxusercontent.com/u/29650667/Front%20End/Olios-flexbox/ICON1.png); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center
@@ -409,7 +400,7 @@ input[id='c-menu-btn']:not(:checked) ~ .c-menu-slider__content {
   content: "";
   width: 5.5vh;
   height: 5.5vh;
-  background-image: url(https://dl.dropboxusercontent.com/u/29650667/Front%20End/Olios-flexbox/ICON2.png);
+  /* background-image: url(https://dl.dropboxusercontent.com/u/29650667/Front%20End/Olios-flexbox/ICON2.png); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center
@@ -422,7 +413,7 @@ input[id='c-menu-btn']:not(:checked) ~ .c-menu-slider__content {
   content: "";
   width: 5.5vh;
   height: 5.5vh;
-  background-image: url(https://dl.dropboxusercontent.com/u/29650667/Front%20End/Olios-flexbox/ICON3.png);
+  /* background-image: url(https://dl.dropboxusercontent.com/u/29650667/Front%20End/Olios-flexbox/ICON3.png); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center
@@ -435,7 +426,7 @@ input[id='c-menu-btn']:not(:checked) ~ .c-menu-slider__content {
   content: "";
   width: 5.5vh;
   height: 5.5vh;
-  background-image: url(https://dl.dropboxusercontent.com/u/29650667/Front%20End/Olios-flexbox/ICON4.png);
+  /* background-image: url(https://dl.dropboxusercontent.com/u/29650667/Front%20End/Olios-flexbox/ICON4.png); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center
@@ -448,7 +439,7 @@ input[id='c-menu-btn']:not(:checked) ~ .c-menu-slider__content {
   content: "";
   width: 5.5vh;
   height: 5.5vh;
-  background-image: url(https://dl.dropboxusercontent.com/u/29650667/Front%20End/Olios-flexbox/ICON5.png);
+  /* background-image: url(https://dl.dropboxusercontent.com/u/29650667/Front%20End/Olios-flexbox/ICON5.png); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center
@@ -515,7 +506,7 @@ input[id='c-menu-btn']:not(:checked) ~ .c-menu-slider__content {
   height: 100vh;
   background-color: #f0f0f0;
   overflow-x: hidden;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(https://dl.dropboxusercontent.com/u/29650667/Front%20End/Olios-flexbox/bg-main.png);
+  /* background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(https://dl.dropboxusercontent.com/u/29650667/Front%20End/Olios-flexbox/bg-main.png); */
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -674,7 +665,7 @@ input[id='c-menu-btn']:not(:checked) ~ .c-menu-slider__content {
   content: "";
   width: 3.5vw;
   height: 3.5vw;
-  background-image: url(https://dl.dropboxusercontent.com/u/29650667/Front%20End/Olios-flexbox/ICON1.png);
+  /* background-image: url(https://dl.dropboxusercontent.com/u/29650667/Front%20End/Olios-flexbox/ICON1.png); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center
@@ -1072,7 +1063,7 @@ input[id='c-menu-btn']:not(:checked) ~ .c-menu-slider__content {
   transform: rotate(-90deg);
   position: relative;
   right: -40%;
-  text-indent: -100%;  
+  text-indent: -100%
 }
 
 .product__recomended-gallary__items-space {
@@ -1176,8 +1167,6 @@ body {
   background-size: 100%, cover;
   background-position: center 14%, center bottom;
   background-repeat: no-repeat; */
-  background-color: #EEE0B7;
-  opacity: 0.9;
 }
 
 .main__content {
