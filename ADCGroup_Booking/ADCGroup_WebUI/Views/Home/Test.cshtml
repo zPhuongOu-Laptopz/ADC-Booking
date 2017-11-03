@@ -3,6 +3,130 @@
     ViewBag.Title = "Test";
     Layout = "~/Views/Shared/_Layout_FullWidth.cshtml";
 }
+<div class="main__content">
+    @*<h2>Bạn muốn đặt phòng họp vào ngày:<input type="text"/></h2>
+    <h3>Hôm nay bạn có những cuộc họp(30/10):</h3>
+    <p>10h-11h : Họp Tổng Công Ty</p> 
+    <p>13h-14h : Họp Phòng IT</p>
+    <p>14h-16h : Họp Nhân sự</p>
+    <br />
+    <div style="margin-left:18%;">
+        <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">30/10</a>
+        <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">31/10</a>
+        <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">01/11</a>
+        <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">02/11</a>
+    </div>
+    <div style="margin-left:18%;">
+        <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">30/10</a>
+        <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">31/10</a>
+        <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">01/11</a>
+        <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">02/11</a>
+        <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">03/11</a>
+        <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">04/11</a>
+        <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">05/11</a>
+    </div>
+    <h3 style="margin-top:40px;">Vào ngày (30/10) Có 4 cuộc họp diễn ra tại phòng 1:</h3>
+    <p>10h-11h : Họp Tổng Công Ty - Mr.Phương [Đang diễn ra]</p>
+    <p>13h-14h : Họp Phòng IT - Mr.Phương [<a href="#">Thay đổi</a>]</p>
+    <p>14h-16h : Họp Nhân sự - Mr.Phương</p>*@
+    <div>
+        <h2>Lịch họp ngày hôm nay:</h2>
+        <p>Họp định kỳ IT : 10h30-11h30 - Phòng họp lầu 6 - Mr.Kiet [<a href="#" style="color:red;">Thay đổi</a>][<a href="#">Hủy</a>]</p>
+        <p>Họp định kỳ IT : 13h30-14h30 - Phòng họp lầu 6 - Mr.Kiet [<a href="#" style="color:red;">Thay đổi</a>][<a href="#">Hủy</a>]</p>
+        <p>Họp định kỳ IT : 15h30-16h30 - Phòng họp lầu 6 - Mr.Kiet [<a href="#" style="color:red;">Thay đổi</a>][<a href="#">Hủy</a>]</p>
+        <p>Họp định kỳ công ty : 16h30 - 17h00 - Phòng họp lầu 4 - Mr.Phuong </p>
+    </div>
+    <h2>Xem lịch họp theo Phòng</h2>
+    <div>
+        <button style="width: 100px; height: 50px;">Phòng họp nhỏ lầu 2</button>
+        <button style="width: 100px; height: 50px;">Phòng họp lớn lầu 2</button>
+        <button style="width: 100px; height: 50px;">Phòng họp lầu 4</button>
+        <button style="width: 100px; height: 50px;">Phòng họp lầu 6</button>
+    </div>
+    <h2>Xem lịch họp theo Ngày</h2>
+    <div>
+        <button style="width: 100px; height: 50px;">04/11</button>
+        <button style="width: 100px; height: 50px;">05/11</button>
+        <button style="width: 100px; height: 50px;">06/11</button>
+        <button style="width: 100px; height: 50px;">07/11</button>
+        <button style="width: 100px; height: 50px;">08/11</button>
+        <button style="width: 100px; height: 50px;">09/11</button>
+    </div>
+    <h2>Xem lịch họp dạng bảng</h2>
+    <table border="2px solid red;">
+        <tr>
+            <td>
+                Ngày/Giờ
+            </td>
+            <td>
+                2/11
+            </td>
+            <td>
+                3/11
+            </td>
+            <td>
+                4/11
+            </td>
+            <td>
+                5/11
+            </td>
+            <td>
+                6/11
+            </td>
+            <td>
+                7/11
+            </td>
+        </tr>
+        <tr>
+            <td>
+                8h-9h
+            </td>
+            <td rowspan="2">
+                <a href="#" style="text-decoration: none; color:green;">Họp IT - Mr.Kiệt</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                9h-10h
+            </td>
+        </tr>
+        <tr>
+            <td>
+                10h-11h
+            </td>
+        </tr>
+        <tr>
+            <td>
+                11h-12h
+            </td>
+        </tr>
+        <tr>
+            <td>
+                12h-13h
+            </td>
+        </tr>
+        <tr>
+            <td>
+                13h-14h
+            </td>
+        </tr>
+        <tr>
+            <td>
+                14h-15h
+            </td>
+        </tr>
+        <tr>
+            <td>
+                15h-16h
+            </td>
+        </tr>
+        <tr>
+            <td>
+                16h-17h
+            </td>
+        </tr>
 
-<h2>Ngọc Phương</h2>
+    </table>
+</div>
+
 

@@ -124,6 +124,7 @@
     <Content Include="Asset\css\styleLogin.css" />
     <Content Include="Asset\css\styleNpLayout.css" />
     <Content Include="Asset\images\background_1.jpeg" />
+    <Content Include="Asset\images\login-background.jpg" />
     <Content Include="Asset\images\Logo2.png" />
     <Content Include="Asset\images\logoadc.jpg" />
     <Content Include="Asset\images\photoaboutme.jpg" />
