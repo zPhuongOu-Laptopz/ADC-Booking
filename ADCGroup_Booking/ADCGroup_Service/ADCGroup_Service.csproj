@@ -46,6 +46,7 @@
   <ItemGroup>
     <Folder Include="Model\BasicModel\" />
     <Folder Include="Model\JiraModel\" />
+    <Folder Include="Service_BookingRoom\Service_Booking\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
