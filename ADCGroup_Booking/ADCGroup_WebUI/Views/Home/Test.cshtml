@@ -3,61 +3,60 @@
     Layout = "~/Views/Shared/_Layout_FullWidth.cshtml";
 }
 <div class="main__content">
-    @*<h2>Bạn muốn đặt phòng họp vào ngày:<input type="text"/></h2>
-        <h3>Hôm nay bạn có những cuộc họp(30/10):</h3>
-        <p>10h-11h : Họp Tổng Công Ty</p>
-        <p>13h-14h : Họp Phòng IT</p>
-        <p>14h-16h : Họp Nhân sự</p>
-        <br />
-        <div style="margin-left:18%;">
-            <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">30/10</a>
-            <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">31/10</a>
-            <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">01/11</a>
-            <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">02/11</a>
-        </div>
-        <div style="margin-left:18%;">
-            <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">30/10</a>
-            <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">31/10</a>
-            <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">01/11</a>
-            <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">02/11</a>
-            <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">03/11</a>
-            <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">04/11</a>
-            <a href="" class="btn btn-main" style="height:20px;width:40px;float:left;margin-left:2px;">05/11</a>
-        </div>
-        <h3 style="margin-top:40px;">Vào ngày (30/10) Có 4 cuộc họp diễn ra tại phòng 1:</h3>
-        <p>10h-11h : Họp Tổng Công Ty - Mr.Phương [Đang diễn ra]</p>
-        <p>13h-14h : Họp Phòng IT - Mr.Phương [<a href="#">Thay đổi</a>]</p>
-        <p>14h-16h : Họp Nhân sự - Mr.Phương</p>*@
     <h2>Xin chào, Ngọc Phương</h2>
     <h3>Tôi muốn đặt lịch họp vào ngày</h3>
-    <input type="date">
-    <button data-toggle="modal" data-target="#ModalofP" type="button" class="btn btn-info" value="submit" name="btn-submit">Tìm phòng phụ hợp</button>
-    <div>
-        <h2>Lịch họp ngày hôm nay:</h2>
-        <p>Họp định kỳ IT : 10h30-11h30 - Phòng họp lầu 6 - Mr.Kiet [<a data-toggle="modal" data-target="#myModal" style="color:red;" href="#">Chi tiết</a>][<a style="color:red;" href="#">Thay đổi</a>][<a style="color:red;" href="#">Hủy</a>]</p>
-        <p>Họp định kỳ IT : 13h30-14h30 - Phòng họp lầu 4 - Mr.Kiet [<a data-toggle="modal" data-target="#myModal" style="color:red;" href="#">Chi tiết</a>][<a style="color:red;" href="#">Thay đổi</a>][<a style="color:red;" href="#">Hủy</a>]</p>
-        <p>Họp định kỳ IT : 15h30-16h30 - Phòng họp nhỏ lầu 2 - Mr.Kiet [<a data-toggle="modal" data-target="#myModal" style="color:red;" href="#">Chi tiết</a>][<a style="color:red;" href="#">Thay đổi</a>][<a style="color:red;" href="#">Hủy</a>]</p>
-        <p>Họp định kỳ công ty : 16h30 - 17h00 - Phòng họp lầu 4 - Mr.Phuong [<a data-toggle="modal" data-target="#myModal" style="color:red;" href="#">Chi tiết</a>][<a style="color:red;" href="#">Liên hệ</a>]</p>
+    <form action="suggestion.html">
+        <input type="date">
+        <button type="submit" class="btn btn-info" name="btn-submit">Tìm phòng phụ hợp</button>
+    </form>
+    <div class="np-notification">
+        <h2>Danh sách các cuộc họp</h2>
+        <h2>Lịch họp ngày hôm nay</h2>
+        <p>
+            Họp định kỳ IT : 10h30-11h30 - Phòng họp lầu 6 - Mr.Kiet [
+            <a data-toggle="modal" data-target="#myModal" href="#">Chi tiết</a>][
+            <a href="#">Thay đổi</a>][
+            <a href="#">Hủy</a>]
+        </p>
+        <p>
+            Họp định kỳ IT : 13h30-14h30 - Phòng họp lầu 4 - Mr.Kiet [
+            <a data-toggle="modal" data-target="#myModal" href="#">Chi tiết</a>][
+            <a href="#">Thay đổi</a>][
+            <a href="#">Hủy</a>]
+        </p>
+        <p>
+            Họp định kỳ IT : 15h30-16h30 - Phòng họp nhỏ lầu 2 - Mr.Kiet [
+            <a data-toggle="modal" data-target="#myModal" href="#">Chi tiết</a>][
+            <a href="#">Thay đổi</a>][
+            <a href="#">Hủy</a>]
+        </p>
+        <p>
+            Họp định kỳ công ty : 16h30 - 17h00 - Phòng họp lầu 4 - Mr.Phuong [
+            <a data-toggle="modal" data-target="#myModal" href="#">Chi tiết</a>][
+            <a href="#">Liên hệ</a>]
+        </p>
     </div>
     <h3>Xem lịch họp theo Ngày (7 ngày tiếp theo)</h3>
-    <div>
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" style="width: 100px; height: 50px;">04/11</button>
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#ModalofP" style="width: 100px; height: 50px;">05/11</button>
-        <button type="button" class="btn btn-info" style="width: 100px; height: 50px;">06/11</button>
-        <button type="button" class="btn btn-success" style="width: 100px; height: 50px;">07/11</button>
-        <button type="button" class="btn btn-success" style="width: 100px; height: 50px;">08/11</button>
-        <button type="button" class="btn btn-success" style="width: 100px; height: 50px;">09/11</button>
+    <div class="np-btn-daybnt">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" style="width: 100px; height: 50px;">04/11</button>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalofP" style="width: 100px; height: 50px;">05/11</button>
+        <button type="button" class="btn btn-success">06/11</button>
+        <button type="button" class="btn btn-success">07/11</button>
+        <button type="button" class="btn btn-success">08/11</button>
+        <button type="button" class="btn btn-success">09/11</button>
     </div>
     <h3>Xem lịch họp theo Phòng</h3>
-    <div>
-        <button style="width: 100px; height: 50px;">Phòng họp nhỏ lầu 2</button>
-        <button style="width: 100px; height: 50px;">Phòng họp lớn lầu 2</button>
-        <button style="width: 100px; height: 50px;">Phòng họp lầu 4</button>
-        <button style="width: 100px; height: 50px;">Phòng họp lầu 6</button>
+    <div class="np-bnt-roombnt">
+        <button type="button" class="btn btn-success">Phòng họp nhỏ lầu 2</button>
+        <button class="btn btn-info">Phòng họp lớn lầu 2</button>
+        <button class="btn btn-warning">Phòng họp lầu 4</button>
+        <button class="btn btn-danger">Phòng họp lầu 6</button>
     </div>
-    <h3>Xem lịch họp dạng bảng (Đang xây dựng...Coming soon !)</h3>
-    <button type="button" class="btn btn-danger" style="width: 100px; height: 50px;">Theo tuần</button>
-    <button type="button" class="btn btn-danger" style="width: 100px; height: 50px;">Theo ngày</button>
+    <div class="np-btn-roomtablebnt">
+        <h3>Xem lịch họp dạng bảng (Đang xây dựng...Coming soon !)</h3>
+        <button type="button" class="btn btn-danger">Theo tuần</button>
+        <button type="button" class="btn btn-danger">Theo ngày</button>
+    </div>
     <div class="container">
 
         <!-- Modal -->
@@ -69,12 +68,24 @@
                         <h4 class="modal-title">Chi tiết về cuộc họp</h4>
                     </div>
                     <div class="modal-body">
-                        <p><strong>Người đặt :</strong> Nguyễn Ngọc Phương</p>
-                        <p><strong>Phòng :</strong> Phòng họp lớn lầu 2</p>
-                        <p><strong>Giờ bắt đầu :</strong> 10:55</p>
-                        <p><strong>Giờ kết thúc :</strong> 11:45</p>
-                        <p><strong>Mức độ ưu tiên :</strong> Cao</p>
-                        <p><strong>Tình trạng :</strong> Đã duyệt</p>
+                        <p>
+                            <strong>Người đặt :</strong> Nguyễn Ngọc Phương
+                        </p>
+                        <p>
+                            <strong>Phòng :</strong> Phòng họp lớn lầu 2
+                        </p>
+                        <p>
+                            <strong>Giờ bắt đầu :</strong> 10:55
+                        </p>
+                        <p>
+                            <strong>Giờ kết thúc :</strong> 11:45
+                        </p>
+                        <p>
+                            <strong>Mức độ ưu tiên :</strong> Cao
+                        </p>
+                        <p>
+                            <strong>Tình trạng :</strong> Đã duyệt
+                        </p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Liên hệ</button>
@@ -96,13 +107,33 @@
                 <div class="modal-body">
                     <p>Các phòng còn trống:</p>
                     <h4>Phòng : Phòng họp lớn lầu 2</h4>
-                    <p>Khung giờ: <a href="#">8:00-9:15</a> <a href="#">10:30-11:45</a> <a href="#">14:15-16:30</a></p>
+                    <p>
+                        Khung giờ:
+                        <a href="#">8:00-9:15</a>
+                        <a href="#">10:30-11:45</a>
+                        <a href="#">14:15-16:30</a>
+                    </p>
                     <h4>Phòng : Phòng họp nhỏ lầu 2</h4>
-                    <p>Khung giờ: <a href="#">8:00-9:15</a> <a href="#">10:30-11:45</a> <a href="#">14:15-16:30</a></p>
+                    <p>
+                        Khung giờ:
+                        <a href="#">8:00-9:15</a>
+                        <a href="#">10:30-11:45</a>
+                        <a href="#">14:15-16:30</a>
+                    </p>
                     <h4>Phòng : Phòng họp lầu 4</h4>
-                    <p>Khung giờ: <a href="#">8:00-9:15</a> <a href="#">10:30-11:45</a> <a href="#">14:15-16:30</a></p>
+                    <p>
+                        Khung giờ:
+                        <a href="#">8:00-9:15</a>
+                        <a href="#">10:30-11:45</a>
+                        <a href="#">14:15-16:30</a>
+                    </p>
                     <h4>Phòng : Phòng họp lầu 6</h4>
-                    <p>Khung giờ: <a href="#">8:00-9:15</a> <a href="#">10:30-11:45</a> <a href="#">14:15-16:30</a></p>
+                    <p>
+                        Khung giờ:
+                        <a href="#">8:00-9:15</a>
+                        <a href="#">10:30-11:45</a>
+                        <a href="#">14:15-16:30</a>
+                    </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" data-dismiss="modal">Đặt phòng</button>
@@ -112,80 +143,80 @@
         </div>
     </div>
 </div>
-    <!-- <table border="2px solid;">
-        <tr>
-            <td>
-                Ngày/Giờ
-            </td>
-            <td>
-                2/11
-            </td>
-            <td>
-                3/11
-            </td>
-            <td>
-                4/11
-            </td>
-            <td>
-                5/11
-            </td>
-            <td>
-                6/11
-            </td>
-            <td>
-                7/11
-            </td>
-        </tr>
-        <tr>
-            <td>
-                8h-9h
-            </td>
-            <td rowspan="2">
-                <a href="#" style="text-decoration: none; color:green;">Họp IT - Mr.Kiệt</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                9h-10h
-            </td>
-        </tr>
-        <tr>
-            <td>
-                10h-11h
-            </td>
-        </tr>
-        <tr>
-            <td>
-                11h-12h
-            </td>
-        </tr>
-        <tr>
-            <td>
-                12h-13h
-            </td>
-        </tr>
-        <tr>
-            <td>
-                13h-14h
-            </td>
-        </tr>
-        <tr>
-            <td>
-                14h-15h
-            </td>
-        </tr>
-        <tr>
-            <td>
-                15h-16h
-            </td>
-        </tr>
-        <tr>
-            <td>
-                16h-17h
-            </td>
-        </tr>
+<!-- <table border="2px solid;">
+    <tr>
+        <td>
+            Ngày/Giờ
+        </td>
+        <td>
+            2/11
+        </td>
+        <td>
+            3/11
+        </td>
+        <td>
+            4/11
+        </td>
+        <td>
+            5/11
+        </td>
+        <td>
+            6/11
+        </td>
+        <td>
+            7/11
+        </td>
+    </tr>
+    <tr>
+        <td>
+            8h-9h
+        </td>
+        <td rowspan="2">
+            <a href="#" style="text-decoration: none; color:green;">Họp IT - Mr.Kiệt</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            9h-10h
+        </td>
+    </tr>
+    <tr>
+        <td>
+            10h-11h
+        </td>
+    </tr>
+    <tr>
+        <td>
+            11h-12h
+        </td>
+    </tr>
+    <tr>
+        <td>
+            12h-13h
+        </td>
+    </tr>
+    <tr>
+        <td>
+            13h-14h
+        </td>
+    </tr>
+    <tr>
+        <td>
+            14h-15h
+        </td>
+    </tr>
+    <tr>
+        <td>
+            15h-16h
+        </td>
+    </tr>
+    <tr>
+        <td>
+            16h-17h
+        </td>
+    </tr>
 
-    </table> -->
+</table> -->
 </div>
 
 

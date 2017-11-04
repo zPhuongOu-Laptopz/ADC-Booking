@@ -1,0 +1,23 @@
+﻿*{
+    margin:0;
+    padding:0;
+}
+
+.np-notification a{
+    color:red;
+}
+
+.np-btn-daybnt button{
+    width: 100px; 
+    height: 50px;
+}
+
+.np-bnt-roombnt button{
+    /*width: 15%;*/ 
+    height: 50px;
+}
+
+.np-btn-roomtablebnt button{
+    width: 100px; 
+    height: 50px;
+}

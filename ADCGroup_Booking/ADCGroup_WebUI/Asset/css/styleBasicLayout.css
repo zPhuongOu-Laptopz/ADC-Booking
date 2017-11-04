@@ -296,6 +296,7 @@ input[id='c-menu-btn'] {
 }
 
 input[id='c-menu-btn']:checked ~ .c-menu-slider__content {
+  margin-top:-20px;
   width: 38vh;
   right: -3.8vh;
   -webkit-animation: menu-slide-in 0.7s;
@@ -1145,8 +1146,8 @@ a {
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: auto;
   background-color: #f0f0f0
 }
 
@@ -1183,7 +1184,7 @@ body {
 
 .main__content p {
   margin-top: 1vh;
-  font-size: 1.7vw;
+  /*font-size: 1.7vw;*/
   font-weight: 300;
   margin-bottom: 2vw
 }
