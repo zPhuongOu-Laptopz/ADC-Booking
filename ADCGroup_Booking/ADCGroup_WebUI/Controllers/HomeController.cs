@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ADCGroup_Service.InterfaceEx.Service_Booking;
+using ADCGroup_Service.InterfaceEx.Service_Html;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -7,18 +9,37 @@ using System.Web.Mvc;
 
 namespace ADCGroup_WebUI.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        // GET: Home
+        /// <summary>
+        /// Variable
+        /// </summary>
+        private readonly IMeeting service_meeting;
+        private readonly IHtml_MeetingRoom html_meeting;
+
+        /// <summary>
+        /// Ctor Home Controller
+        /// </summary>
+        /// <param name="_service"></param>
+        /// <param name="_html"></param>
+        public HomeController(IMeeting _service, IHtml_MeetingRoom _html)
+        {
+            this.service_meeting = _service;
+            this.html_meeting = _html;
+        }
+
+        // GET : Home
         [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
+        // GET : HOME
         [HttpGet]
-        public ActionResult Test()
-        {
+        public ActionResult Home_Booking()
+        { 
+            
             return View();
         }
 

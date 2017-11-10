@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace ADCGroup_WebUI.Controllers
 {
-    public class BuildingController : Controller
+    public class BuildingController : BaseController
     {
         // GET: Building
         public ActionResult Index(string _username)

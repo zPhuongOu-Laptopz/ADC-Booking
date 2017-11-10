@@ -234,5 +234,29 @@ namespace ADCGroup_Service.Model.JiraModel.Issue
         public string self { get; set; }
         public string key { get; set; }
         public Fields fields { get; set; }
+
+
+        /// <summary>
+        /// Test - np
+        /// </summary>
+        /// <param name="sumamary"></param>
+        /// <param name="idroom"></param>
+        /// <param name="quantity"></param>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <param name="description"></param>
+        public Issue(string sumamary, string idroom, double? quantity, DateTime start, DateTime end, string description) // CTor Issue - np
+        {
+            Fields fi = new Fields();
+            Customfield10402 custom = new Customfield10402();
+            fi.summary = sumamary;
+            fi.customfield_10307 = quantity;
+            fi.customfield_10400 = start;
+            fi.customfield_10401 = end;
+            custom.id = idroom;
+            fi.description = description;
+            this.fields = fi;
+            this.fields.customfield_10402 = custom;
+        }
     }
 }

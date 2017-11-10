@@ -1,13 +1,11 @@
-﻿using ADCGroup_Service.Model.BasicModel.Account;
+﻿using ADCGroup_Service.InterfaceEx.Service_Basic;
+using ADCGroup_Service.Model.BasicModel.Account;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ADCGroup_Service.Service_BookingRoom.Service_Basic
+namespace ADCGroup_Service.Service.Service_Basic
 {
-    public class ChangeType
+    public class ChangeType : IChangeType
     {
         /// <summary>
         /// Convert from Account with username, password to Base64

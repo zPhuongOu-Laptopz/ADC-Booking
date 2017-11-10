@@ -10,8 +10,7 @@
         <button type="submit" class="btn btn-info" name="btn-submit">Tìm phòng phụ hợp</button>
     </form>
     <div class="np-notification">
-        <h2>Danh sách các cuộc họp</h2>
-        <h2>Lịch họp ngày hôm nay</h2>
+        <h2>Lịch họp ngày hôm nay (@DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Year)</h2>
         <p>
             Họp định kỳ IT : 10h30-11h30 - Phòng họp lầu 6 - Mr.Kiet [
             <a data-toggle="modal" data-target="#myModal" href="#">Chi tiết</a>][
@@ -36,21 +35,22 @@
             <a href="#">Liên hệ</a>]
         </p>
     </div>
-    <h3>Xem lịch họp theo Ngày (7 ngày tiếp theo)</h3>
+    <h3>Xem lịch họp trong tuần (Đang xây dựng...Coming soon !)</h3>
     <div class="np-btn-daybnt">
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" style="width: 100px; height: 50px;">04/11</button>
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalofP" style="width: 100px; height: 50px;">05/11</button>
-        <button type="button" class="btn btn-success">06/11</button>
-        <button type="button" class="btn btn-success">07/11</button>
-        <button type="button" class="btn btn-success">08/11</button>
-        <button type="button" class="btn btn-success">09/11</button>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" style="width: 100px; height: 50px;">@DateTime.Now.AddDays(1).Day/@DateTime.Now.AddDays(1).Month</button>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalofP" style="width: 100px; height: 50px;">@DateTime.Now.AddDays(2).Day/@DateTime.Now.AddDays(2).Month</button>
+        <button type="button" class="btn btn-success">@DateTime.Now.AddDays(3).Day/@DateTime.Now.AddDays(3).Month</button>
+        <button type="button" class="btn btn-success">@DateTime.Now.AddDays(4).Day/@DateTime.Now.AddDays(4).Month</button>
+        <button type="button" class="btn btn-success">@DateTime.Now.AddDays(5).Day/@DateTime.Now.AddDays(5).Month</button>
+        <button type="button" class="btn btn-success">@DateTime.Now.AddDays(6).Day/@DateTime.Now.AddDays(6).Month</button>
+        @*<button type="button" class="btn btn-success">@DateTime.Now.AddDays(7).Day/@DateTime.Now.AddDays(7).Month</button>*@
     </div>
-    <h3>Xem lịch họp theo Phòng</h3>
+    <h3>Xem lịch họp theo Phòng (Đang xây dựng...Coming soon !)</h3>
     <div class="np-bnt-roombnt">
         <button type="button" class="btn btn-success">Phòng họp nhỏ lầu 2</button>
-        <button class="btn btn-info">Phòng họp lớn lầu 2</button>
-        <button class="btn btn-warning">Phòng họp lầu 4</button>
-        <button class="btn btn-danger">Phòng họp lầu 6</button>
+        <button class="btn btn-success">Phòng họp lớn lầu 2</button>
+        <button class="btn btn-success">Phòng họp lầu 4</button>
+        <button class="btn btn-success">Phòng họp lầu 6</button>
     </div>
     <div class="np-btn-roomtablebnt">
         <h3>Xem lịch họp dạng bảng (Đang xây dựng...Coming soon !)</h3>
@@ -69,19 +69,19 @@
                     </div>
                     <div class="modal-body">
                         <p>
-                            <strong>Người đặt :</strong> Nguyễn Ngọc Phương
+                            <strong>Người đặt :</strong>Ngọc Phương
                         </p>
                         <p>
-                            <strong>Phòng :</strong> Phòng họp lớn lầu 2
+                            <strong>Tiêu đề :</strong> Summary
                         </p>
                         <p>
-                            <strong>Giờ bắt đầu :</strong> 10:55
+                            <strong>Phòng :</strong>Room
                         </p>
                         <p>
-                            <strong>Giờ kết thúc :</strong> 11:45
+                            <strong>Giờ bắt đầu :</strong> 10:52
                         </p>
                         <p>
-                            <strong>Mức độ ưu tiên :</strong> Cao
+                            <strong>Giờ kết thúc :</strong>10:52
                         </p>
                         <p>
                             <strong>Tình trạng :</strong> Đã duyệt

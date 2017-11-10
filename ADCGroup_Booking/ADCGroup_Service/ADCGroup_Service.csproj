@@ -45,24 +45,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InterfaceEx\Service_Basic\IChangeType.cs" />
+    <Compile Include="InterfaceEx\Service_Booking\IMeeting.cs" />
+    <Compile Include="InterfaceEx\Service_Html\IHtml_MeetingRoom.cs" />
+    <Compile Include="InterfaceEx\Service_Login\IJiraLogin.cs" />
+    <Compile Include="InterfaceEx\Service_Login\IService_Login.cs" />
     <Compile Include="Model\BasicModel\Account\Accounts.cs" />
+    <Compile Include="Model\BasicModel\MeetingRoom\MeetingRoom.cs" />
     <Compile Include="Model\JiraModel\InfoUser\InfoUser.cs" />
     <Compile Include="Model\JiraModel\Issue\Issues.cs" />
-    <Compile Include="Model\JiraModel\LoginSession\LoginInfo.cs" />
     <Compile Include="Model\JiraModel\LoginSession\ModelLogin.cs" />
-    <Compile Include="Model\JiraModel\LoginSession\Session.cs" />
+    <Compile Include="Model\JiraModel\LoginSession\ResultLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service_BookingRoom\Service_Basic\ChangeType.cs" />
-    <Compile Include="Service_BookingRoom\Service_Booking\Metting.cs" />
-    <Compile Include="Service_BookingRoom\Service_Login\JiraLogin.cs" />
-    <Compile Include="Service_BookingRoom\Service_Login\Service_Login.cs" />
+    <Compile Include="Service\Service_Basic\ChangeType.cs" />
+    <Compile Include="Service\Service_Booking\Metting.cs" />
+    <Compile Include="Service\Service_Html\Html_MeetingRoom.cs" />
+    <Compile Include="Service\Service_Login\JiraLogin.cs" />
+    <Compile Include="Service\Service_Login\Login.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="InterfaceEx\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
