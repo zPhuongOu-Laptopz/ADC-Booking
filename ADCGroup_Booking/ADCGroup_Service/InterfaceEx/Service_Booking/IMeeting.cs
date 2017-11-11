@@ -9,6 +9,7 @@ namespace ADCGroup_Service.InterfaceEx.Service_Booking
     {
         Issues GetAllMeetingRoom(Accounts account);
         List<Issue> GetAllIssue(Accounts account);
+        List<Issue> GetAllIssueToday(Accounts account);
         bool CreateIssue(Accounts account, string sumamary, string idroom, double? quantity, DateTime start, DateTime end, string description);
         string JsonMeetingRoom(string sumamary, string idroom, double? quantity, DateTime start, DateTime end, string description);
         bool ChangeStatusIssue();

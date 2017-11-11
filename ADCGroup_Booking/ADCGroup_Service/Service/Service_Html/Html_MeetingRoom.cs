@@ -1,10 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
 using ADCGroup_Service.InterfaceEx.Service_Html;
+using ADCGroup_Service.Model.JiraModel.Issue;
 
 namespace ADCGroup_Service.Service.Service_Html
 {
     public class Html_MeetingRoom : IHtml_MeetingRoom
     {
+        public string MeetingRoomToday(List<Issue> list)
+        {
+            string html_result = string.Empty;
+            foreach (var item in list)
+            {
+                html_result += "<p>" + item.fields.summary + " : ";
+                html_result += item.fields.customfield_10402.value + " - ";
+                html_result += item.fields.customfield_10400.Value.Hour + ":" + item.fields.customfield_10400.Value.Minute + "-";
+                html_result += item.fields.customfield_10401.Value.Hour + ":" + item.fields.customfield_10401.Value.Minute + " ";
+                html_result += "<a href=\"#\" data-toggle=\"modal\" data-target=\"#" + item.id + "\">[Chi Tiết]</a></p>";
+            }
+            return html_result;
+        }
+
         /// <summary>
         /// Return string Html for Website about MeetingRoomToday
         /// </summary>

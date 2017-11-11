@@ -3,13 +3,15 @@
     Layout = "~/Views/Shared/_Layout_FullWidth.cshtml";
 }
 <div class="main__content">
-    <h2>Xin chào, Ngọc Phương</h2>
+    <h2 style="color:red;">Xin chào, @Html.ViewBag.UserDislayName</h2>
     <h3>Tôi muốn đặt lịch họp vào ngày</h3>
     <form action="suggestion.html">
         <input type="date">
         <button type="submit" class="btn btn-info" name="btn-submit">Tìm phòng phụ hợp</button>
     </form>
     <div class="np-notification">
+        <h2>Lịch họp ngày hôm nay (@DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Year)</h2>
+        @Html.Raw(ViewBag.ListIssueToday)
         <h2>Lịch họp ngày hôm nay (@DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Year)</h2>
         <p>
             Họp định kỳ IT : 10h30-11h30 - Phòng họp lầu 6 - Mr.Kiet [
@@ -43,7 +45,6 @@
         <button type="button" class="btn btn-success">@DateTime.Now.AddDays(4).Day/@DateTime.Now.AddDays(4).Month</button>
         <button type="button" class="btn btn-success">@DateTime.Now.AddDays(5).Day/@DateTime.Now.AddDays(5).Month</button>
         <button type="button" class="btn btn-success">@DateTime.Now.AddDays(6).Day/@DateTime.Now.AddDays(6).Month</button>
-        @*<button type="button" class="btn btn-success">@DateTime.Now.AddDays(7).Day/@DateTime.Now.AddDays(7).Month</button>*@
     </div>
     <h3>Xem lịch họp theo Phòng (Đang xây dựng...Coming soon !)</h3>
     <div class="np-bnt-roombnt">

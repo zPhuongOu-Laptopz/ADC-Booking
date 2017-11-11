@@ -10,6 +10,7 @@ using ADCGroup_Service.Model.BasicModel.MeetingRoom;
 using System.Web.Script.Serialization;
 using System.Text;
 using ADCGroup_Service.InterfaceEx.Service_Booking;
+using System.Linq;
 
 namespace ADCGroup_Service.Service.Service_Booking
 {
@@ -75,6 +76,31 @@ namespace ADCGroup_Service.Service.Service_Booking
             Issues alldata = GetAllMeetingRoom(account);
             var list = alldata.issues;
             return list;
+        }
+
+        public List<Issue> GetAllIssueToday(Accounts account)
+        {
+            int daytoday = DateTime.Now.Day;
+            int monthtoday = DateTime.Now.Month;
+            int yeartoday = DateTime.Now.Year;
+            Issues alldata = GetAllMeetingRoom(account);
+            List<Issue> list = alldata.issues;
+            List<Issue> listresult = new List<Issue>();
+            foreach (var item in list)
+            {
+                try
+                {
+                    if (item.fields.customfield_10400.Value.Day == daytoday && item.fields.customfield_10400.Value.Month == monthtoday && item.fields.customfield_10400.Value.Year == yeartoday)
+                    {
+                        listresult.Add(item);
+                    }
+                }
+                catch 
+                {
+                    continue;
+                }
+            }
+            return listresult;
         }
 
         /// <summary>

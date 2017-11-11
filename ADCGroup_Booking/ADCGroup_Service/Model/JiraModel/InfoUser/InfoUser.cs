@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ADCGroup_Service.Model.JiraModel.InfoUser
 {
-    public class InfoUser
+    public class InfoUser //http://intern.adcvn.com:8100/rest/api/2/myself
     {
         public string self { get; set; }
         public string key { get; set; }

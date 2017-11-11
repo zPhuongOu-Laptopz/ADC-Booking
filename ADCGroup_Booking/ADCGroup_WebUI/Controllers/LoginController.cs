@@ -3,6 +3,9 @@ using System.Web.Mvc;
 using ADCGroup_Service.InterfaceEx.Service_Login;
 using ADCGroup_Service.Model.JiraModel.LoginSession;
 using ADCGroup_WebUI.Common;
+using ADCGroup_Service.InterfaceEx.Service_Booking;
+using ADCGroup_Service.InterfaceEx.Service_Html;
+using System.Web.Security;
 
 namespace ADCGroup_WebUI.Controllers
 {
@@ -21,10 +24,10 @@ namespace ADCGroup_WebUI.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult Home(Accounts account)
         {
-            //return LoginWithProject(account);
-            return LoginAllJira(account);
+            return LoginAllJira(account, string.Empty);
         }
 
         private ActionResult LoginWithProject(Accounts account)
@@ -35,7 +38,11 @@ namespace ADCGroup_WebUI.Controllers
                 if (_code == 200)
                 {
                     ModelState.AddModelError("Notification", "Đăng nhập thành công");
+                    LoginUser sess = new LoginUser();
+                    sess.UserName = account.Username;
+                    Session.Add(Common.LoginSession.USER_SESSION, sess.UserName);
                     return RedirectToAction("Index", "Building", new { _username = account.Username });
+                    //return RedirectToAction("Index", "Home", new { _account = account });
                 }
                 else if (_code == 401)
                 {
@@ -57,7 +64,7 @@ namespace ADCGroup_WebUI.Controllers
             return View("Home");
         }
 
-        private ActionResult LoginAllJira(Accounts account)
+        private ActionResult LoginAllJira(Accounts account, string returnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -75,7 +82,9 @@ namespace ADCGroup_WebUI.Controllers
                     LoginUser sess = new LoginUser();
                     sess.UserName = result.name;
                     Session.Add(Common.LoginSession.USER_SESSION, sess.UserName);
-                    return RedirectToAction("Index", "Building", new { _username = account.Username });
+                    TempData["AccountData"] = account;
+                    TempData.Keep();
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {

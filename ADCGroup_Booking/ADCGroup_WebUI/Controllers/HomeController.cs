@@ -1,5 +1,10 @@
 ﻿using ADCGroup_Service.InterfaceEx.Service_Booking;
 using ADCGroup_Service.InterfaceEx.Service_Html;
+using ADCGroup_Service.InterfaceEx.Service_Login;
+using ADCGroup_Service.Model.BasicModel.Account;
+using ADCGroup_Service.Model.JiraModel.InfoUser;
+using ADCGroup_Service.Model.JiraModel.Issue;
+using ADCGroup_Service.Service.Service_Login;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -15,60 +20,76 @@ namespace ADCGroup_WebUI.Controllers
         /// Variable
         /// </summary>
         private readonly IMeeting service_meeting;
-        private readonly IHtml_MeetingRoom html_meeting;
+        private readonly IHtml_MeetingRoom service_htmlmeeting;
+        private readonly IJiraLogin service_jiralogin;
+        Accounts account;
 
         /// <summary>
         /// Ctor Home Controller
         /// </summary>
         /// <param name="_service"></param>
         /// <param name="_html"></param>
-        public HomeController(IMeeting _service, IHtml_MeetingRoom _html)
+        public HomeController(IMeeting _service, IHtml_MeetingRoom _html, IJiraLogin _jiralogin, Accounts _ac)
         {
             this.service_meeting = _service;
-            this.html_meeting = _html;
+            this.service_htmlmeeting = _html;
+            this.service_jiralogin = _jiralogin;
+            this.account = _ac;
         }
 
-        // GET : Home
+        // GET : Home/Index
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(Accounts ac) //Improve
         {
-            return View();
+            try
+            {
+                Models.LoginModels.Accounts acc = TempData["AccountData"] as Models.LoginModels.Accounts;
+                this.account.username = acc.Username;
+                this.account.password = acc.Password;
+                InfoUser User = this.service_jiralogin.GetInfoUser(account);
+                ViewBag.DislayName = User.displayName;
+                TempData["AccountInHome"] = this.account;
+                TempData.Keep("AccountInHome");
+                return View();
+            }
+            catch
+            {
+                Accounts acc = TempData["AccountInHome"] as Accounts;
+                TempData.Keep();
+                InfoUser User = this.service_jiralogin.GetInfoUser(acc);
+                ViewBag.DislayName = User.displayName;
+                TempData["AccountInHome"] = acc;
+                TempData.Keep("AccountInHome");
+                return View();
+            }
         }
 
-        // GET : HOME
-        [HttpGet]
+        // GET : Home/Home_Booking
         public ActionResult Home_Booking()
-        { 
-            
+        {
+            Accounts acc = TempData["AccountInHome"] as Accounts;
+            TempData.Keep("AccountInHome");
+            List<Issue> ListIssueToday = GetAllIssueToday(acc);
+            string htmlMeetingRoomToday = this.service_htmlmeeting.MeetingRoomToday(ListIssueToday);
+            ViewBag.ListIssueToday = htmlMeetingRoomToday;
+            InfoUser User = GetUser(acc);
+            ViewBag.UserDislayName = User.displayName;
             return View();
         }
 
-        [HttpGet]
-        public ActionResult MeetingRoom()
+        public InfoUser GetUser(Accounts a)
         {
-            //DateTime dt1 = DateTime.ParseExact(DateTime.Now.ToString(), "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
-            DateTime dt1 = DateTime.Now;
-            var dt2 = dt1.AddDays(1);
-            var dt3 = dt1.AddDays(2);
-            var dt4 = dt1.AddDays(3);
-            var dt5 = dt1.AddDays(4);
-            string date1 = dt1.ToString("dd/MM", CultureInfo.InvariantCulture);
-            string date2 = dt2.ToString("dd/MM", CultureInfo.InvariantCulture);
-            string date3 = dt3.ToString("dd/MM", CultureInfo.InvariantCulture);
-            string date4 = dt4.ToString("dd/MM", CultureInfo.InvariantCulture);
-            string date5 = dt5.ToString("dd/MM", CultureInfo.InvariantCulture);
-            ViewBag.date1 = date1;
-            ViewBag.date2 = date2;
-            ViewBag.date3 = date3;
-            ViewBag.date4 = date4;
-            ViewBag.date5 = date5;
-            return View();
+            return this.service_jiralogin.GetInfoUser(a);
         }
 
-        public string OpenModelPopup()
+        public List<Issue> GetAllIssue(Accounts a)
         {
-            //can send some data also.
-            return "<h1>This is Modal Popup Window</h1>";
+            return this.service_meeting.GetAllIssue(a);
+        }
+
+        public List<Issue> GetAllIssueToday(Accounts a)
+        {
+            return this.service_meeting.GetAllIssueToday(a);
         }
     }
 }
