@@ -3,6 +3,7 @@
     Layout = "~/Views/Shared/_Layout_FullWidth.cshtml";
 }
 <div class="main__content">
+    <a class="btn btn-block" stype="position:fixed;"> ADC GROUP </a>
     <h2 style="color:red;">Xin chào, @Html.ViewBag.UserDislayName</h2>
     <h3>Tôi muốn đặt lịch họp vào ngày</h3>
     <form action="suggestion.html">
@@ -11,31 +12,22 @@
     </form>
     <div class="np-notification">
         <h2>Lịch họp ngày hôm nay (@DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Year)</h2>
-        @Html.Raw(ViewBag.ListIssueToday)
-        <h2>Lịch họp ngày hôm nay (@DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Year)</h2>
-        <p>
-            Họp định kỳ IT : 10h30-11h30 - Phòng họp lầu 6 - Mr.Kiet [
-            <a data-toggle="modal" data-target="#myModal" href="#">Chi tiết</a>][
-            <a href="#">Thay đổi</a>][
-            <a href="#">Hủy</a>]
-        </p>
-        <p>
-            Họp định kỳ IT : 13h30-14h30 - Phòng họp lầu 4 - Mr.Kiet [
-            <a data-toggle="modal" data-target="#myModal" href="#">Chi tiết</a>][
-            <a href="#">Thay đổi</a>][
-            <a href="#">Hủy</a>]
-        </p>
-        <p>
-            Họp định kỳ IT : 15h30-16h30 - Phòng họp nhỏ lầu 2 - Mr.Kiet [
-            <a data-toggle="modal" data-target="#myModal" href="#">Chi tiết</a>][
-            <a href="#">Thay đổi</a>][
-            <a href="#">Hủy</a>]
-        </p>
-        <p>
-            Họp định kỳ công ty : 16h30 - 17h00 - Phòng họp lầu 4 - Mr.Phuong [
-            <a data-toggle="modal" data-target="#myModal" href="#">Chi tiết</a>][
-            <a href="#">Liên hệ</a>]
-        </p>
+        <br /><h2>Phòng họp lớn lầu 2</h2>
+        <button type="button" class="btn btn-warning">Các khung giờ còn trống</button>
+        <br />
+        @Html.Raw(ViewData["htmlMeetingRoom2bigToday"])
+        <h2>Phòng họp nhỏ lầu 2</h2>
+        <button type="button" class="btn btn-warning">Các khung giờ còn trống</button>
+        <br />
+        @Html.Raw(ViewData["htmlMeetingRoom2smallToday"])
+        <h2>Phòng họp lầu 4</h2>
+        <button type="button" class="btn btn-warning">Các khung giờ còn trống</button>
+        <br />
+        @Html.Raw(ViewData["htmlMeetingRoom4Today"])
+        <h2>Phòng họp lầu 6</h2>
+        <button type="button" class="btn btn-warning">Các khung giờ còn trống</button>
+        <br />
+        @Html.Raw(ViewData["htmlMeetingRoom6Today"])
     </div>
     <h3>Xem lịch họp trong tuần (Đang xây dựng...Coming soon !)</h3>
     <div class="np-btn-daybnt">
@@ -61,6 +53,7 @@
     <div class="container">
 
         <!-- Modal -->
+        @Html.Raw(ViewBag.ListPopupToday)
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
@@ -137,87 +130,10 @@
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Đặt phòng</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#success">Đặt phòng</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- <table border="2px solid;">
-    <tr>
-        <td>
-            Ngày/Giờ
-        </td>
-        <td>
-            2/11
-        </td>
-        <td>
-            3/11
-        </td>
-        <td>
-            4/11
-        </td>
-        <td>
-            5/11
-        </td>
-        <td>
-            6/11
-        </td>
-        <td>
-            7/11
-        </td>
-    </tr>
-    <tr>
-        <td>
-            8h-9h
-        </td>
-        <td rowspan="2">
-            <a href="#" style="text-decoration: none; color:green;">Họp IT - Mr.Kiệt</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            9h-10h
-        </td>
-    </tr>
-    <tr>
-        <td>
-            10h-11h
-        </td>
-    </tr>
-    <tr>
-        <td>
-            11h-12h
-        </td>
-    </tr>
-    <tr>
-        <td>
-            12h-13h
-        </td>
-    </tr>
-    <tr>
-        <td>
-            13h-14h
-        </td>
-    </tr>
-    <tr>
-        <td>
-            14h-15h
-        </td>
-    </tr>
-    <tr>
-        <td>
-            15h-16h
-        </td>
-    </tr>
-    <tr>
-        <td>
-            16h-17h
-        </td>
-    </tr>
-
-</table> -->
-</div>
-
-

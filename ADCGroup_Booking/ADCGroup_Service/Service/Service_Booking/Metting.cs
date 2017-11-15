@@ -11,6 +11,7 @@ using System.Web.Script.Serialization;
 using System.Text;
 using ADCGroup_Service.InterfaceEx.Service_Booking;
 using System.Linq;
+using ADCGroup_Service.Model.BasicModel.TimeMeeting;
 
 namespace ADCGroup_Service.Service.Service_Booking
 {
@@ -95,7 +96,7 @@ namespace ADCGroup_Service.Service.Service_Booking
                         listresult.Add(item);
                     }
                 }
-                catch 
+                catch
                 {
                     continue;
                 }
@@ -117,7 +118,8 @@ namespace ADCGroup_Service.Service.Service_Booking
             string encodedCredentials = new ChangeType() { }.EncodedAccount(account);
 
             string resultsjson = JsonMeetingRoom(sumamary, idroom, 20, start, end, description);
-            var postjson = Encoding.ASCII.GetBytes(resultsjson);
+            //var postjson = Encoding.ASCII.GetBytes(resultsjson);
+            var postjson = Encoding.UTF8.GetBytes(resultsjson);
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = WebRequestMethods.Http.Post;
@@ -175,5 +177,246 @@ namespace ADCGroup_Service.Service.Service_Booking
         {
             return true;
         }
+
+        public List<Issue> GetAllIssuebyRoom2big(Accounts account)
+        {
+            List<Issue> list = GetAllIssueToday(account);
+            List<Issue> listresult = new List<Issue>();
+            foreach (var item in list)
+            {
+                try
+                {
+                    if (item.fields.customfield_10402.id == "10300")
+                    {
+                        listresult.Add(item);
+                    }
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            return listresult;
+        }
+
+        public List<Issue> GetAllIssuebyRoom2small(Accounts account)
+        {
+            List<Issue> list = GetAllIssueToday(account);
+            List<Issue> listresult = new List<Issue>();
+            foreach (var item in list)
+            {
+                try
+                {
+                    if (item.fields.customfield_10402.id == "10301")
+                    {
+                        listresult.Add(item);
+                    }
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            return listresult;
+        }
+
+        public List<Issue> GetAllIssuebyRoom4(Accounts account)
+        {
+            List<Issue> list = GetAllIssueToday(account);
+            List<Issue> listresult = new List<Issue>();
+            foreach (var item in list)
+            {
+                try
+                {
+                    if (item.fields.customfield_10402.id == "10302")
+                    {
+                        listresult.Add(item);
+                    }
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            return listresult;
+        }
+
+        public List<Issue> GetAllIssuebyRoom6(Accounts account)
+        {
+            List<Issue> list = GetAllIssueToday(account);
+            List<Issue> listresult = new List<Issue>();
+            foreach (var item in list)
+            {
+                try
+                {
+                    if (item.fields.customfield_10402.id == "10303")
+                    {
+                        listresult.Add(item);
+                    }
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            return listresult;
+        }
+
+        public List<Issue> GetAllIssuebyRoom2big(Accounts account, DateTime day)
+        {
+            List<Issue> list = GetAllIssueThisDay(account, day);
+            List<Issue> listresult = new List<Issue>();
+            foreach (var item in list)
+            {
+                try
+                {
+                    if (item.fields.customfield_10402.id == "10300")
+                    {
+                        listresult.Add(item);
+                    }
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            return listresult;
+        }
+
+        public List<Issue> GetAllIssuebyRoom2small(Accounts account, DateTime day)
+        {
+            List<Issue> list = GetAllIssueThisDay(account, day);
+            List<Issue> listresult = new List<Issue>();
+            foreach (var item in list)
+            {
+                try
+                {
+                    if (item.fields.customfield_10402.id == "10301")
+                    {
+                        listresult.Add(item);
+                    }
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            return listresult;
+        }
+
+        public List<Issue> GetAllIssuebyRoom4(Accounts account, DateTime day)
+        {
+            List<Issue> list = GetAllIssueThisDay(account, day);
+            List<Issue> listresult = new List<Issue>();
+            foreach (var item in list)
+            {
+                try
+                {
+                    if (item.fields.customfield_10402.id == "10302")
+                    {
+                        listresult.Add(item);
+                    }
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            return listresult;
+        }
+
+        public List<Issue> GetAllIssuebyRoom6(Accounts account, DateTime day)
+        {
+            List<Issue> list = GetAllIssueThisDay(account, day);
+            List<Issue> listresult = new List<Issue>();
+            foreach (var item in list)
+            {
+                try
+                {
+                    if (item.fields.customfield_10402.id == "10303")
+                    {
+                        listresult.Add(item);
+                    }
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            return listresult;
+        }
+
+        public List<Issue> GetAllIssueThisDay(Accounts account, DateTime day)
+        {
+            Issues alldata = GetAllMeetingRoom(account);
+            List<Issue> list = alldata.issues;
+            List<Issue> listresult = new List<Issue>();
+            foreach (var item in list)
+            {
+                try
+                {
+                    if (item.fields.customfield_10400.Value.Day == day.Day && item.fields.customfield_10400.Value.Month == day.Month && item.fields.customfield_10400.Value.Year == day.Year)
+                    {
+                        listresult.Add(item);
+                    }
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+            return listresult;
+        }
+
+        public List<TimeMeeting> ConvertDatimeIssuetoTimeMeeting(List<Issue> list)
+        {
+            List<TimeMeeting> listresult = new List<TimeMeeting>();            
+            foreach (var item in list)
+            {
+                //TimeMeeting time = new TimeMeeting();
+                //time.timestart = item.fields.customfield_10400.Value;
+                //time.timeend = item.fields.customfield_10401.Value;
+                listresult.Add(new TimeMeeting(item.fields.customfield_10400.Value, item.fields.customfield_10401.Value));
+            }
+            List<TimeMeeting> listcheck = listresult.OrderBy(item => item.timestart).OrderBy(item => item.timeend).ToList<TimeMeeting>();
+            return listcheck;
+        }
+
+        public List<TimeMeeting> GetAllFreeTimeMeetingwithListIssueOneDay(List<TimeMeeting> list)
+        {
+            int day = list[0].timestart.Day;
+            int month = list[0].timestart.Month;
+            int year = list[0].timestart.Year;
+            DateTime minimum = new DateTime(year, month, day, 8, 0, 0);
+            DateTime maximum = new DateTime(year, month, day, 17, 0, 0);
+            List<TimeMeeting> listresult = new List<TimeMeeting>();
+            if (list[0].timestart.Hour > 8 && list[0].timestart.Minute > 0)
+            {
+                listresult.Add(new TimeMeeting(minimum, new DateTime(year, month, day, list[0].timestart.Hour, list[0].timestart.Minute, list[0].timestart.Second)));
+            }
+            for (int i = 0; i < list.Count - 1; i++)
+            {
+                int j = i + 1;
+                if (list[j].timestart.Hour > list[i].timeend.Hour || list[j].timestart.Minute > list[i].timeend.Minute)
+                {
+                    listresult.Add(new TimeMeeting(new DateTime(year, month, day, list[i].timeend.Hour, list[i].timeend.Minute, list[i].timeend.Second), new DateTime(year, month, day, list[j].timeend.Hour, list[j].timeend.Minute, list[j].timeend.Second)));
+                }
+            }
+            if (list[list.Count - 1].timeend.Hour < 17)
+            {
+                listresult.Add(new TimeMeeting(new DateTime(year, month, day, list[list.Count - 1].timeend.Hour, list[list.Count - 1].timeend.Minute, list[list.Count - 1].timeend.Second), maximum));
+            }
+            return listresult;
+        } // Not yet!
+
+        public bool CheckFreeTimeIssueforBooking()
+        {
+            throw new NotImplementedException();
+        } // Not yet!
+
+        public bool BookingMeetingRoom()
+        {
+            throw new NotImplementedException();
+        } // Not yet!
     }
 }

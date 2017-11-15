@@ -52,6 +52,7 @@
     <Compile Include="InterfaceEx\Service_Login\IService_Login.cs" />
     <Compile Include="Model\BasicModel\Account\Accounts.cs" />
     <Compile Include="Model\BasicModel\MeetingRoom\MeetingRoom.cs" />
+    <Compile Include="Model\BasicModel\TimeMeeting\TimeMeeting.cs" />
     <Compile Include="Model\JiraModel\InfoUser\InfoUser.cs" />
     <Compile Include="Model\JiraModel\Issue\Issues.cs" />
     <Compile Include="Model\JiraModel\LoginSession\ModelLogin.cs" />

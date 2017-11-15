@@ -6,6 +6,8 @@ using ADCGroup_WebUI.Common;
 using ADCGroup_Service.InterfaceEx.Service_Booking;
 using ADCGroup_Service.InterfaceEx.Service_Html;
 using System.Web.Security;
+using System.Web;
+using System;
 
 namespace ADCGroup_WebUI.Controllers
 {
@@ -18,9 +20,10 @@ namespace ADCGroup_WebUI.Controllers
             this.serviceLogin = _context;
         }
         // GET: Login
-        [HttpGet]
+        [HttpGet, OutputCache(NoStore = true, Duration = 1)]
         public ActionResult Home()
         {
+            Application_BeginRequest();
             return View();
         }
 
@@ -92,6 +95,13 @@ namespace ADCGroup_WebUI.Controllers
                 }
             }
             return View("Home");
+        }
+
+        protected void Application_BeginRequest()
+        {
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Cache.SetExpires(DateTime.UtcNow.AddHours(-1));
+            Response.Cache.SetNoStore();
         }
     }
 }

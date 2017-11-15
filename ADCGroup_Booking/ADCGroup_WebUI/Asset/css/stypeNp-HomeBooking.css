@@ -1,23 +1,27 @@
-﻿*{
-    margin:0;
-    padding:0;
+﻿* {
+    margin: 0;
+    padding: 0;
 }
 
-.np-notification a{
-    color:red;
+.np-notification a {
+    color: red;
 }
 
-.np-btn-daybnt button{
-    width: 100px; 
+.np-btn-daybnt button {
+    width: 100px;
     height: 50px;
 }
 
-.np-bnt-roombnt button{
+.np-bnt-roombnt button {
     width: 155px;
     height: 50px;
 }
 
-.np-btn-roomtablebnt button{
-    width: 100px; 
+.np-btn-roomtablebnt button {
+    width: 100px;
     height: 50px;
+}
+
+tr td {
+    padding: 5px;
 }

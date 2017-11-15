@@ -201,7 +201,9 @@
     <Content Include="Views\Building\Index.cshtml" />
     <Content Include="Views\Shared\_Layout_FullWidth.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Home_Booking.cshtml" />
+    <Content Include="Views\Home\HomeBooking.cshtml" />
+    <Content Include="Views\Home\Denied.cshtml" />
+    <Content Include="Views\Home\Booking.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -4,12 +4,7 @@ using ADCGroup_Service.InterfaceEx.Service_Login;
 using ADCGroup_Service.Model.BasicModel.Account;
 using ADCGroup_Service.Model.JiraModel.InfoUser;
 using ADCGroup_Service.Model.JiraModel.Issue;
-using ADCGroup_Service.Service.Service_Login;
-using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ADCGroup_WebUI.Controllers
@@ -65,15 +60,45 @@ namespace ADCGroup_WebUI.Controllers
         }
 
         // GET : Home/Home_Booking
-        public ActionResult Home_Booking()
+        public ActionResult HomeBooking()
         {
-            Accounts acc = TempData["AccountInHome"] as Accounts;
-            TempData.Keep("AccountInHome");
-            List<Issue> ListIssueToday = GetAllIssueToday(acc);
-            string htmlMeetingRoomToday = this.service_htmlmeeting.MeetingRoomToday(ListIssueToday);
-            ViewBag.ListIssueToday = htmlMeetingRoomToday;
-            InfoUser User = GetUser(acc);
-            ViewBag.UserDislayName = User.displayName;
+            try
+            {
+                Accounts acc = TempData["AccountInHome"] as Accounts;
+                TempData.Keep("AccountInHome");
+                List<Issue> ListIssueToday = this.service_meeting.GetAllIssueToday(acc);
+                List<Issue> ListRoom2Big = this.service_meeting.GetAllIssuebyRoom2big(acc);
+                List<Issue> ListRoom2Small = this.service_meeting.GetAllIssuebyRoom2small(acc);
+                List<Issue> ListRoom4 = this.service_meeting.GetAllIssuebyRoom4(acc);
+                List<Issue> ListRoom6 = this.service_meeting.GetAllIssuebyRoom6(acc);
+                string htmlMeetingRoom2bigToday = this.service_htmlmeeting.MeetingRoomTodayTable(ListRoom2Big);
+                string htmlMeetingRoom2smallToday = this.service_htmlmeeting.MeetingRoomTodayTable(ListRoom2Small);
+                string htmlMeetingRoom4Today = this.service_htmlmeeting.MeetingRoomTodayTable(ListRoom4);
+                string htmlMeetingRoom6Today = this.service_htmlmeeting.MeetingRoomTodayTable(ListRoom6);
+                string htmlPopup = this.service_htmlmeeting.MeetingRoomwithID(ListIssueToday);
+                ViewData["htmlMeetingRoom2bigToday"] = htmlMeetingRoom2bigToday;
+                ViewData["htmlMeetingRoom2smallToday"] = htmlMeetingRoom2smallToday;
+                ViewData["htmlMeetingRoom4Today"] = htmlMeetingRoom4Today;
+                ViewData["htmlMeetingRoom6Today"] = htmlMeetingRoom6Today;
+                ViewBag.ListPopupToday = htmlPopup;
+                InfoUser User = GetUser(acc);
+                ViewBag.UserDislayName = User.displayName;
+                return View();
+            }
+            catch
+            {
+                return View("Denied");
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Booking()
+        {
+            return View();
+        }
+
+        public ActionResult Denied()
+        {
             return View();
         }
 

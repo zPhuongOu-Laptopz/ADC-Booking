@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Booking";
+    Layout = "~/Views/Shared/_Layout_FullWidth.cshtml";
+}
+
+<div class="main__content">
+    <a class="btn btn-block" stype="position:fixed;"> ADC GROUP </a>
+    <h2> Đặt Phòng Họp </h2>
+    <div style="margin:0 auto; width:50%">
+        <p>
+            <strong>Người đặt :</strong>
+        </p>
+        <input readonly type="text" class="form-control">
+        <p>
+            <strong>Tiêu đề :</strong>
+        </p>
+        <input type="text" class="form-control">
+        <p>
+            <strong>Số người :</strong>
+        </p>
+        <input type="number" min="1" max="50" class="form-control">
+        <p>
+            <strong>Phòng :</strong>
+        </p>
+        <select>
+            <option value="volvo">Phòng họp lớn lầu 2</option>
+            <option value="saab">Phòng họp nhỏ lầu 2</option>
+            <option value="opel">Phòng họp lầu 4</option>
+            <option value="audi">Phòng họp lầu 6</option>
+        </select>
+        <p>
+            <strong>Test Picker Time :</strong>
+        </p>
+        <input type="date" class="form-control">
+        <p>
+            <strong>Giờ bắt đầu :</strong>
+        </p>
+        <input type="time" class="form-control">
+        <p>
+            <strong>Giờ kết thúc :</strong>
+        </p>
+        <input type="datetime-local" class="form-control">
+        <p>
+            <strong>Mô tả :</strong>
+        </p>
+        <input type="text" class="form-control">
+        <br />
+        <button type="submit" class="btn btn-success">Đặt phòng</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+    </div>
+</div>
