@@ -59,6 +59,14 @@ namespace ADCGroup_WebUI.Controllers
                 {
                     ModelState.AddModelError("Notification", "Tài khoản chưa xác minh");
                 }
+                else if (_code == -1)
+                {
+                    ModelState.AddModelError("Notification", "Bạn chưa nhập tài khoản");
+                }
+                else if (_code == -2)
+                {
+                    ModelState.AddModelError("Notification", "Bạn chưa nhập mật khẩu");
+                }
                 else
                 {
                     ModelState.AddModelError("Notification", "Lỗi đăng nhập");
@@ -75,6 +83,14 @@ namespace ADCGroup_WebUI.Controllers
                 if (result.code == 401)
                 {
                     ModelState.AddModelError("Notification", "Sai tên đăng nhập hoặc mật khẩu");
+                }
+                else if (result.code == -1)
+                {
+                    ModelState.AddModelError("Notification", "Bạn chưa nhập Tài khoản");
+                }
+                else if (result.code == -2)
+                {
+                    ModelState.AddModelError("Notification", "Bạn chưa nhập Mật khẩu");
                 }
                 else if (result.code == 403)
                 {

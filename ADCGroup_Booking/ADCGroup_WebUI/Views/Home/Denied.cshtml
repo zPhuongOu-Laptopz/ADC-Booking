@@ -5,7 +5,8 @@
 }
 
 <div class="main__content">
-        <h2>Bạn bị từ chối truy cập đến trang này !</h2>
-        <a href="/Home/Index" class="btn btn-danger">Quay Lại</a>
+        <h2 style="padding-top:200px; margin-top:0px;">ADC GROUP : Bạn bị từ chối truy cập đến trang này</h2>
+        @Html.ActionLink("Thử lại", "Index", "Home", new { @class = "btn btn-danger" })
+        @Html.ActionLink("Quay lại", "Index", "Home", new { @class = "btn btn-danger" })
 </div>
 

@@ -14,10 +14,10 @@ namespace ADCGroup_Service.InterfaceEx.Service_Booking
         List<Issue> GetAllIssueToday(Accounts account);
         List<Issue> GetAllIssueThisDay(Accounts account, DateTime day);
         List<TimeMeeting> GetAllFreeTimeMeetingwithListIssueOneDay(List<TimeMeeting> list);
-        List<Issue> GetAllIssuebyRoom2big(Accounts account);
-        List<Issue> GetAllIssuebyRoom2small(Accounts account);
-        List<Issue> GetAllIssuebyRoom4(Accounts account);
-        List<Issue> GetAllIssuebyRoom6(Accounts account);
+        List<Issue> GetAllIssuebyRoom2bigToday(Accounts account);
+        List<Issue> GetAllIssuebyRoom2smallToday(Accounts account);
+        List<Issue> GetAllIssuebyRoom4Today(Accounts account);
+        List<Issue> GetAllIssuebyRoom6Today(Accounts account);
         List<Issue> GetAllIssuebyRoom2big(Accounts account, DateTime day);
         List<Issue> GetAllIssuebyRoom2small(Accounts account, DateTime day);
         List<Issue> GetAllIssuebyRoom4(Accounts account, DateTime day);

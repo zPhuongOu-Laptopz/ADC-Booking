@@ -313,7 +313,7 @@ input[id='c-menu-btn']:checked ~ .c-menu-btn--is-active {
 input[id='c-menu-btn']:not(:checked) ~ .c-menu-slider__content {
   transition: width 0s 0.7s;
   -webkit-animation: menu-slide-out 0.7s;
-  animation: menu-slide-out 0.7s
+  animation: menu-slide-out 0.7s;
 }
 
 @-webkit-keyframes menu-slide-in {

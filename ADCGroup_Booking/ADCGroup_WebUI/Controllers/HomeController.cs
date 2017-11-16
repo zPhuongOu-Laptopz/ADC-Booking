@@ -67,10 +67,10 @@ namespace ADCGroup_WebUI.Controllers
                 Accounts acc = TempData["AccountInHome"] as Accounts;
                 TempData.Keep("AccountInHome");
                 List<Issue> ListIssueToday = this.service_meeting.GetAllIssueToday(acc);
-                List<Issue> ListRoom2Big = this.service_meeting.GetAllIssuebyRoom2big(acc);
-                List<Issue> ListRoom2Small = this.service_meeting.GetAllIssuebyRoom2small(acc);
-                List<Issue> ListRoom4 = this.service_meeting.GetAllIssuebyRoom4(acc);
-                List<Issue> ListRoom6 = this.service_meeting.GetAllIssuebyRoom6(acc);
+                List<Issue> ListRoom2Big = this.service_meeting.GetAllIssuebyRoom2bigToday(acc);
+                List<Issue> ListRoom2Small = this.service_meeting.GetAllIssuebyRoom2smallToday(acc);
+                List<Issue> ListRoom4 = this.service_meeting.GetAllIssuebyRoom4Today(acc);
+                List<Issue> ListRoom6 = this.service_meeting.GetAllIssuebyRoom6Today(acc);
                 string htmlMeetingRoom2bigToday = this.service_htmlmeeting.MeetingRoomTodayTable(ListRoom2Big);
                 string htmlMeetingRoom2smallToday = this.service_htmlmeeting.MeetingRoomTodayTable(ListRoom2Small);
                 string htmlMeetingRoom4Today = this.service_htmlmeeting.MeetingRoomTodayTable(ListRoom4);
@@ -89,6 +89,13 @@ namespace ADCGroup_WebUI.Controllers
             {
                 return View("Denied");
             }
+        }
+
+        [HttpGet]
+        public ActionResult ResultDay(int _day, int _month)
+        {
+
+            return View();
         }
 
         [HttpGet]

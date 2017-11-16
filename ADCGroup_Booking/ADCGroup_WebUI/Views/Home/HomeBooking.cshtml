@@ -3,16 +3,17 @@
     Layout = "~/Views/Shared/_Layout_FullWidth.cshtml";
 }
 <div class="main__content">
-    <a class="btn btn-block" stype="position:fixed;"> ADC GROUP </a>
+    <a class="btn btn-block" stype="position: fixed;left: 100%;height: 100%;z-index: 999;"> ADC GROUP </a>
     <h2 style="color:red;">Xin chào, @Html.ViewBag.UserDislayName</h2>
-    <h3>Tôi muốn đặt lịch họp vào ngày</h3>
+    @*<h3>Tôi muốn đặt lịch họp vào ngày</h3>*@
     <form action="suggestion.html">
         <input type="date">
         <button type="submit" class="btn btn-info" name="btn-submit">Tìm phòng phụ hợp</button>
-    </form>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#booking">Đặt phòng cho ngày hôm nay</button>
+    </form>    
     <div class="np-notification">
         <h2>Lịch họp ngày hôm nay (@DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Year)</h2>
-        <br /><h2>Phòng họp lớn lầu 2</h2>
+        <h2>Phòng họp lớn lầu 2</h2>
         <button type="button" class="btn btn-warning">Các khung giờ còn trống</button>
         <br />
         @Html.Raw(ViewData["htmlMeetingRoom2bigToday"])
@@ -29,7 +30,8 @@
         <br />
         @Html.Raw(ViewData["htmlMeetingRoom6Today"])
     </div>
-    <h3>Xem lịch họp trong tuần (Đang xây dựng...Coming soon !)</h3>
+    
+    @*<h3>Xem lịch họp trong tuần (Đang xây dựng...Coming soon !)</h3>
     <div class="np-btn-daybnt">
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" style="width: 100px; height: 50px;">@DateTime.Now.AddDays(1).Day/@DateTime.Now.AddDays(1).Month</button>
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalofP" style="width: 100px; height: 50px;">@DateTime.Now.AddDays(2).Day/@DateTime.Now.AddDays(2).Month</button>
@@ -44,7 +46,8 @@
         <button class="btn btn-success">Phòng họp lớn lầu 2</button>
         <button class="btn btn-success">Phòng họp lầu 4</button>
         <button class="btn btn-success">Phòng họp lầu 6</button>
-    </div>
+    </div>*@
+
     <div class="np-btn-roomtablebnt">
         <h3>Xem lịch họp dạng bảng (Đang xây dựng...Coming soon !)</h3>
         <button type="button" class="btn btn-danger">Theo tuần</button>
@@ -85,6 +88,61 @@
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Liên hệ</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="booking" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Chi tiết về cuộc họp</h4>
+                </div>
+                <div class="modal-body">
+                    <h2>Đặt Phòng Họp</h2>
+                    <h4>
+                        Người đặt Phòng
+                    </h4>
+                    <input type="text" readonly style="width:75%; color:red; border:2px solid #4cd964; border-radius:5px 5px 5px 5px; height:30px !important; font-size:15px;" />
+                    <h4>
+                        Ngày
+                    </h4>
+                    <input type="text" readonly value="@DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Year" style="width:75%; color:red; border:2px solid #4cd964; border-radius:5px 5px 5px 5px; height:30px !important; font-size:15px;" />
+                    <h4>
+                        Tiêu đề
+                    </h4>
+                    <input type="text" placeholder="Summary" style="width:75%; color:red; border:2px solid #4cd964; border-radius:5px 5px 5px 5px; height:30px !important; font-size:15px;" />
+                    <h4>
+                        Số lượng
+                    </h4>
+                    <input type="number" placeholder="Number Person" style="width:75%; color:red; border:2px solid #4cd964; border-radius:5px 5px 5px 5px; height:30px !important; font-size:15px;" />
+                    <h4>
+                        Thời gian bắt đầu
+                    </h4>
+                    <input type="time" style="width:75%; color:red; border:2px solid #4cd964; border-radius:5px 5px 5px 5px; height:30px !important; font-size:15px;" />
+                    <h4>
+                        Thời gian kết thúc
+                    </h4>
+                    <input type="time" style="width:75%; color:red; border:2px solid #4cd964; border-radius:5px 5px 5px 5px; height:30px !important; font-size:15px;" />
+                    <h4>
+                        Chọn Phòng
+                    </h4>
+                    <select style="width:75%; color:red; border:2px solid #4cd964; border-radius:5px 5px 5px 5px; height:30px !important; font-size:15px;">
+                        <option value="volvo">Phòng họp lớn lầu 2</option>
+                        <option value="saab">Phòng họp nhỏ lầu 2</option>
+                        <option value="mercedes">Phòng họp lầu 4</option>
+                        <option value="audi">Phòng họp lầu 6</option>
+                    </select>
+                    <h4>
+                        Mô tả
+                    </h4>
+                    <input type="text" placeholder="Description" style="width:75%; color:red; border:2px solid #4cd964; border-radius:5px 5px 5px 5px; height:30px !important; font-size:15px;" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Đặt phòng</button>
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Quay lại</button>
                 </div>
             </div>
         </div>

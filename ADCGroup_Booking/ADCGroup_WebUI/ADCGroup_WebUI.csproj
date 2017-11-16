@@ -204,6 +204,7 @@
     <Content Include="Views\Home\HomeBooking.cshtml" />
     <Content Include="Views\Home\Denied.cshtml" />
     <Content Include="Views\Home\Booking.cshtml" />
+    <Content Include="Views\Home\ResultDay.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

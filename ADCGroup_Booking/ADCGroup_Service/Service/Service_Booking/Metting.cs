@@ -26,7 +26,7 @@ namespace ADCGroup_Service.Service.Service_Booking
         {
             string strResponseValue = string.Empty;
             string resultJson = string.Empty;
-            string url = string.Format("http://intern.adcvn.com:8100/rest/api/2/search?jql=project={0}&startAt={1}&maxResults={2}", "DKPH", 0, 1000);
+            string url = string.Format("http://intern.adcvn.com:8100/rest/api/2/search?jql=project={0}&startAt={1}&maxResults={2}", "DKPH", 0, 100);
 
             string encodedCredentials = new ChangeType() { }.EncodedAccount(account);
 
@@ -178,7 +178,7 @@ namespace ADCGroup_Service.Service.Service_Booking
             return true;
         }
 
-        public List<Issue> GetAllIssuebyRoom2big(Accounts account)
+        public List<Issue> GetAllIssuebyRoom2bigToday(Accounts account)
         {
             List<Issue> list = GetAllIssueToday(account);
             List<Issue> listresult = new List<Issue>();
@@ -199,7 +199,7 @@ namespace ADCGroup_Service.Service.Service_Booking
             return listresult;
         }
 
-        public List<Issue> GetAllIssuebyRoom2small(Accounts account)
+        public List<Issue> GetAllIssuebyRoom2smallToday(Accounts account)
         {
             List<Issue> list = GetAllIssueToday(account);
             List<Issue> listresult = new List<Issue>();
@@ -220,7 +220,7 @@ namespace ADCGroup_Service.Service.Service_Booking
             return listresult;
         }
 
-        public List<Issue> GetAllIssuebyRoom4(Accounts account)
+        public List<Issue> GetAllIssuebyRoom4Today(Accounts account)
         {
             List<Issue> list = GetAllIssueToday(account);
             List<Issue> listresult = new List<Issue>();
@@ -241,7 +241,7 @@ namespace ADCGroup_Service.Service.Service_Booking
             return listresult;
         }
 
-        public List<Issue> GetAllIssuebyRoom6(Accounts account)
+        public List<Issue> GetAllIssuebyRoom6Today(Accounts account)
         {
             List<Issue> list = GetAllIssueToday(account);
             List<Issue> listresult = new List<Issue>();
